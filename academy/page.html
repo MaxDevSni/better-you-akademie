@@ -708,6 +708,35 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
 @media (max-width:1000px){.svc-pains,.svc-grid,.cs-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.cs-more{grid-template-columns:1fr}}
 @media (max-width:860px){.proc-wrap{grid-template-columns:1fr}.proc-ph{position:relative;top:0;max-height:340px}.proc-ph img{aspect-ratio:auto;height:340px}.kpi-g{grid-template-columns:1fr;gap:20px}.kpi-seal{width:110px;height:110px;font-size:1.9rem}.kpi-split{grid-template-columns:1fr}.fit{grid-template-columns:1fr}.bars{height:210px;gap:4px}.bar .r{font-size:.58rem}.tools{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.svc-pains,.svc-grid{grid-template-columns:1fr}.cs-stats{grid-template-columns:1fr 1fr;gap:10px}.cs-stats>div{padding:16px}.f .au-want{grid-template-columns:1fr}}
+
+.calc2{display:inline-flex;gap:6px;padding:5px;border-radius:999px;background:var(--bg-2);margin-bottom:18px}
+.c2-tab{border:0;background:transparent;color:var(--fg);font:600 .9rem var(--font);padding:.65em 1.3em;border-radius:999px;cursor:pointer}
+.c2-tab[aria-selected="true"]{background:var(--ink);color:#fff}
+.c2-panel{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:start}
+.c2-in{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;display:grid;gap:18px}
+.c2-in label{display:grid;grid-template-columns:1fr auto;gap:8px 12px;font-size:.92rem;font-weight:500}
+.c2-in output{font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums}
+.c2-in input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--gold);height:22px;margin:0}
+.c2-in select{grid-column:1/-1;font:500 .95rem var(--font);padding:.65em .8em;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg)}
+.c2-out{background:var(--ink);color:#fff;border-radius:20px;padding:24px;display:grid;gap:18px}
+.c2-kpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.c2-kpi>div{background:rgba(255,255,255,.07);border-radius:14px;padding:14px;display:grid;gap:4px}
+.c2-kpi>div.hl{background:var(--gold)}
+.c2-kpi b{font-size:clamp(1.2rem,2.2vw,1.7rem);font-variant-numeric:tabular-nums;line-height:1.1}
+.c2-kpi span{font-size:.78rem;color:rgba(255,255,255,.75);line-height:1.35}
+.c2-kpi .hl span{color:rgba(255,255,255,.9)}
+.c2-chart{background:rgba(255,255,255,.04);border-radius:14px;padding:18px 14px 10px}
+.c2-bars{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:14px;align-items:end;height:200px}
+.c2-bar{display:grid;grid-template-rows:auto 1fr auto;height:100%;gap:6px;text-align:center;min-width:0}
+.c2-bar b{font-size:.78rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.c2-bar i{display:block;align-self:end;width:min(70%,64px);margin:0 auto;border-radius:8px 8px 0 0;background:rgba(255,255,255,.25);transition:height .35s ease}
+.c2-bar.on i{background:linear-gradient(var(--gold-hi),var(--gold))}
+.c2-bar.cur i{background:#c3cde3}
+.c2-bar small{font-size:.74rem;color:rgba(255,255,255,.7);line-height:1.25}
+.c2-say{font-size:.98rem;line-height:1.55}
+.c2-say b{color:var(--gold-hi)}
+@media (max-width:900px){.c2-panel{grid-template-columns:1fr}}
+@media (max-width:520px){.c2-kpi{grid-template-columns:1fr 1fr}.c2-kpi>div.hl{grid-column:1/-1}.c2-bars{gap:8px;height:170px}.c2-bar b{font-size:.68rem}}
 </style>
 
 <div class="annc">Pro salony, kadeřnictví a kliniky: <a href="#audit">SEO audit webu zdarma</a> a hovor nad výsledky bez závazku.</div>
@@ -718,6 +747,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
       <a href="#proces">Jak to probíhá</a>
       <a href="#co-delame">Služby</a>
       <a href="#pripadovka">Případová studie</a>
+      <a href="#kalkulacky">Kalkulačky</a>
       <a href="#garance">Garance</a>
       <a href="#produkty">Kurz</a>
     </nav>
@@ -835,6 +865,60 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
       <div><p class="eyebrow">Co jsme udělali</p><ul><li>Web s online rezervací a prodejem poukazů</li><li>Vstupní stránky pro jednotlivá ošetření a 16 stránek pro dárkové poukazy</li><li>Meta kampaně s cílem Prodej, měření Pixel i Conversions API</li><li>Google Ads ve vyhledávání a SEO obsah</li></ul></div>
     </div>
     <p class="note cs-src">Zdroj: Správce reklam Meta (atribuce Meta, nákupy a rezervace na webu), Google Ads a Google Search Console (pozice za poslední 3 měsíce), staženo 10. 11. 2026. Výsledky jiných provozoven se liší podle lokality, ceníku a nabídky, proto začínáme auditem a domluvenými cíli.</p>
+  </div>
+</section>
+
+
+<section class="chap" id="kalkulacky">
+  <div class="wrap">
+    <div class="chap-head">
+      <p class="eyebrow">Spočítejte si to</p>
+      <div><h2>Kolik vám může přinést <strong>reklama a Google</strong></h2>
+      <p class="lead">Posuňte jezdce podle svého podniku. Výsledek se spočítá hned, bez registrace.</p></div>
+    </div>
+    <div class="calc2" role="tablist" aria-label="Kalkulačky">
+      <button class="c2-tab" role="tab" aria-selected="true" data-c2="ads" type="button">Placená reklama</button>
+      <button class="c2-tab" role="tab" aria-selected="false" data-c2="seo" type="button">SEO a Google</button>
+    </div>
+
+    <div class="c2-panel" id="c2-ads">
+      <div class="c2-in">
+        <label>Kolik dáte měsíčně do reklamy<output id="ca-b-o"></output><input type="range" id="ca-b" min="2000" max="60000" step="1000" value="10000"></label>
+        <label>Kolik u vás klient utratí za jednu návštěvu<output id="ca-a-o"></output><input type="range" id="ca-a" min="300" max="6000" step="100" value="1500"></label>
+        <label>Kolikrát za rok k vám klient přijde<output id="ca-v-o"></output><input type="range" id="ca-v" min="1" max="12" step="1" value="3"></label>
+        <label>Kolik stojí jedna rezervace z reklamy<output id="ca-c-o"></output><input type="range" id="ca-c" min="100" max="1500" step="10" value="360"></label>
+        <p class="note">V Better You nás jedna rezervace z Meta reklam stála letos v průměru 356 Kč.</p>
+      </div>
+      <div class="c2-out">
+        <div class="c2-kpi">
+          <div><b id="ca-n">–</b><span>nových klientů měsíčně</span></div>
+          <div><b id="ca-y">–</b><span>tržby od nich za rok</span></div>
+          <div class="hl"><b id="ca-r">–</b><span>každá koruna v reklamě vám vrátí</span></div>
+        </div>
+        <div class="c2-chart" aria-hidden="true"><div class="c2-bars" id="ca-chart"></div></div>
+        <p class="c2-say" id="ca-say"></p>
+      </div>
+    </div>
+
+    <div class="c2-panel" id="c2-seo" hidden>
+      <div class="c2-in">
+        <label>Kolik lidí měsíčně hledá vaše služby ve vašem městě<output id="cs-s-o"></output><input type="range" id="cs-s" min="200" max="20000" step="100" value="3000"></label>
+        <label>Kolik u vás klient utratí za jednu návštěvu<output id="cs-a-o"></output><input type="range" id="cs-a" min="300" max="6000" step="100" value="1500"></label>
+        <label>Kolik lidí z webu se objedná<output id="cs-k-o"></output><input type="range" id="cs-k" min="1" max="10" step="0.5" value="4"></label>
+        <label>Kde jste teď na Googlu<select id="cs-p"><option value="0">Nejsem vidět</option><option value="10" selected>Kolem 10. místa</option><option value="5">Kolem 5. místa</option><option value="3">Na 3. místě</option></select></label>
+        <p class="note">Míra prokliku podle pozice je orientační průměr z veřejných studií vyhledávání: 1. místo asi 28 %, 3. místo 10 %, 5. místo 6 %, 10. místo 2,5 %.</p>
+      </div>
+      <div class="c2-out">
+        <div class="c2-kpi">
+          <div><b id="cs-n">–</b><span>klientů navíc měsíčně v top 3</span></div>
+          <div><b id="cs-y">–</b><span>tržby navíc za rok</span></div>
+          <div class="hl"><b>0 Kč</b><span>platíte za každý proklik</span></div>
+        </div>
+        <div class="c2-chart" aria-hidden="true"><div class="c2-bars" id="cs-chart"></div></div>
+        <p class="c2-say" id="cs-say"></p>
+      </div>
+    </div>
+    <p style="margin-top:22px"><a class="btn" href="#audit">Chci zjistit svá čísla: SEO audit zdarma</a></p>
   </div>
 </section>
 
@@ -1485,6 +1569,29 @@ document.getElementById('lead-form').addEventListener('submit',async e=>{
    ok.textContent='Děkujeme, máme to. Ozveme se do 24 hodin v pracovní dny a domluvíme hovor, na kterém vám audit ukážeme.';f.reset();try{if(window.fbq)fbq('track','Lead',{content_name:'SEO audit'})}catch(x){}}
   catch(x){ok.textContent=x.message}
   btn.disabled=false;ok.hidden=false});})();
+
+/* ---------- kalkulačky reklama + SEO ---------- */
+(()=>{const $=id=>document.getElementById(id);if(!$('ca-b'))return;
+ const kc=n=>Math.round(n).toLocaleString('cs-CZ')+' Kč',num=n=>Math.round(n).toLocaleString('cs-CZ');
+ const short=n=>n>=1e6?(n/1e6).toFixed(1).replace('.',',')+' mil.':n>=1e4?Math.round(n/1000)+' tis.':num(n);
+ const bars=(el,items)=>{const mx=Math.max(...items.map(x=>x.v),1);el.innerHTML=items.map(x=>`<div class="c2-bar ${x.c||''}"><b>${x.t}</b><i style="height:${Math.max(2,x.v/mx*100)}%"></i><small>${x.l}</small></div>`).join('')};
+ function ads(){const b=+$('ca-b').value,a=+$('ca-a').value,v=+$('ca-v').value,c=+$('ca-c').value;
+  $('ca-b-o').textContent=kc(b);$('ca-a-o').textContent=kc(a);$('ca-v-o').textContent=v+'×';$('ca-c-o').textContent=kc(c);
+  const n=b/c,first=n*a,year=n*a*v,r=year/b;
+  $('ca-n').textContent=num(n);$('ca-y').textContent=short(year)+' Kč';$('ca-r').textContent=r.toFixed(1).replace('.',',')+' Kč';
+  bars($('ca-chart'),[{v:b,t:short(b),l:'Dáte do reklamy',c:'cur'},{v:first,t:short(first),l:'Tržby z 1. návštěvy',c:''},{v:year,t:short(year),l:'Tržby od nich za rok',c:'on'}]);
+  $('ca-say').innerHTML=`Za <b>${kc(b)}</b> měsíčně získáte zhruba <b>${num(n)} nových klientů</b>. Když se vrátí ${v}× do roka, utratí u vás <b>${kc(year)}</b>.`}
+ const CTR={0:0,10:.025,5:.06,3:.10,1:.28};
+ function seo(){const sN=+$('cs-s').value,a=+$('cs-a').value,k=+$('cs-k').value/100,p=+$('cs-p').value;
+  $('cs-s-o').textContent=num(sN)+'×';$('cs-a-o').textContent=kc(a);$('cs-k-o').textContent=String(k*100).replace('.',',')+' %';
+  const cl=pos=>sN*CTR[pos]*k,now=cl(p),top=cl(3),extra=Math.max(0,top-now);
+  $('cs-n').textContent='+'+num(extra);$('cs-y').textContent=short(extra*a*12)+' Kč';
+  bars($('cs-chart'),[[10,'10. místo'],[5,'5. místo'],[3,'3. místo'],[1,'1. místo']].map(([pos,l])=>({v:cl(pos),t:num(cl(pos))+' '+(Math.round(cl(pos))===1?'klient':Math.round(cl(pos))>=2&&Math.round(cl(pos))<=4?'klienti':'klientů'),l,c:pos===p?'cur':(pos<=3?'on':'')})));
+  $('cs-say').innerHTML=extra>0?`Když se dostanete ${p?'z '+p+'. místa':'z neviditelnosti'} do <b>top 3</b>, přijde k vám z Googlu zhruba o <b>${num(extra)} klientů víc každý měsíc</b>. To je <b>${kc(extra*a*12)}</b> ročně, a za proklik neplatíte nic.`:`Už jste v top 3. Další krok je 1. místo: tam vidí výsledky víc než čtvrtina hledajících.`}
+ ['ca-b','ca-a','ca-v','ca-c'].forEach(id=>$(id).addEventListener('input',ads));
+ ['cs-s','cs-a','cs-k','cs-p'].forEach(id=>$(id).addEventListener('input',seo));
+ document.querySelectorAll('.c2-tab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.c2-tab').forEach(x=>x.setAttribute('aria-selected',x===t));$('c2-ads').hidden=t.dataset.c2!=='ads';$('c2-seo').hidden=t.dataset.c2!=='seo'}));
+ ads();seo();})();
 /* ---------- free tabs ---------- */
 document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
   document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected',x===t));
