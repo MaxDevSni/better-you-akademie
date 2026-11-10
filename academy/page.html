@@ -480,6 +480,7 @@ header.top.open .mnav{display:grid}
 .mnav{gap:2px;padding-block:6px 14px;border-top:1px solid var(--line);padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 .mnav a,.mnav button{display:block;text-align:left;padding:12px 4px;font:600 1rem var(--font);color:var(--fg);text-decoration:none;background:none;border:0;border-bottom:1px solid var(--line);cursor:pointer}
 .mnav a:last-child{border-bottom:0}
+.mnav a.mnav-cta{margin-top:8px;text-align:center;border:0;border-radius:999px;background:var(--cta);color:#fff}
 @media (max-width:900px){.menu-btn{display:inline-grid}}
 @media (max-width:600px){
   #acct a.btn[href="#clenstvi"],#acct [data-open-admin]{display:none}
@@ -771,7 +772,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
       <a href="#pripadovka">Případová studie</a>
       <a href="#kalkulacky">Kalkulačky</a>
       <a href="#garance">Garance</a>
-      <a href="#produkty">Kurz</a>
+      <a href="#produkty">Kurzy</a>
     </nav>
     <div class="acct" id="acct"><button class="btn ghost small" id="login-btn" type="button">Přihlásit</button><a class="btn small" href="#audit">SEO audit zdarma</a></div>
   </div>
@@ -1026,7 +1027,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
   <div class="wrap">
     <div class="chap-head">
       <p class="eyebrow">Pro koho to je</p>
-      <div><h2>Spolupráce dává smysl, <strong>když…</strong></h2></div>
+      <div><h2>Spolupráce dává smysl, <strong>když…</strong></h2>
+      <p class="lead">Klienty si vybíráme. Pracujeme jen tam, kde vidíme, že to opravdu má smysl a výsledky se dají změřit. Když to smysl nedává, řekneme vám to rovnou na hovoru.</p></div>
     </div>
     <div class="fit">
       <div class="yes"><b>Pro vás, když</b><ul><li>Vlastníte kosmetický salon, kadeřnictví nebo kliniku</li><li>Chcete nové klienty z Googlu i z placené reklamy</li><li>Máte rozpočet na reklamu a chcete vědět, co vám vrací</li><li>Jste připraveni nové klienty obsloužit</li><li>Chcete dlouhodobý proces, ne jednorázovou akci</li></ul></div>
@@ -1041,7 +1043,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
       <p class="eyebrow">Zdarma a bez závazku</p>
       <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:300;margin-top:12px">SEO audit vašeho webu <strong>zdarma</strong></h2>
       <p class="cap"><span class="cap-dot" aria-hidden="true"></span>Aktuální kapacita: <b>2 noví klienti</b></p>
-      <p class="lead" style="margin-top:14px">Vyplňte krátký dotazník. Projdeme váš web, profil na Googlu a konkurenci ve vašem okolí a na hovoru zdarma vám ukážeme, kde ztrácíte klienty.</p>
+      <p class="lead" style="margin-top:14px">Vyplňte krátký dotazník. Projdeme váš web, profil na Googlu a konkurenci ve vašem okolí a na hovoru zdarma vám ukážeme, kde ztrácíte klienty. Spolupráci pak nabídneme jen tehdy, když u vás má opravdu smysl.</p>
       <ul class="audit-l">
         <li>Jak jste na tom ve vyhledávání proti konkurenci</li>
         <li>Technické chyby, které brzdí váš web</li>
@@ -1095,7 +1097,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
 </section>
 
 <!-- FREE -->
-<section class="chap alt" id="zdarma">
+<section class="chap alt" id="zdarma" hidden>
   <div class="wrap">
     <div class="chap-head">
       <p class="eyebrow">Zdarma, bez registrace</p>
@@ -1309,6 +1311,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
         <details><summary>Je SEO audit opravdu zdarma?</summary><p>Ano. Projdeme váš web, profil na Googlu a konkurenci a výsledek vám ukážeme na hovoru. Nic tím nepodepisujete.</p></details>
         <details><summary>Musím mít nový web?</summary><p>Ne. Když váš web funguje, napojíme na něj měření a vstupní stránky. Nový web doporučíme jen tehdy, když ten současný brzdí výsledky. Při spolupráci na 8 měsíců a déle je nový web včetně rezervačního systému zdarma.</p></details>
         <details><summary>Kdy uvidím výsledky?</summary><p>U placené reklamy vidíme první data o rezervacích během prvních týdnů. SEO je běh na delší trať, výsledky rostou v řádu měsíců. Proto kombinujeme obojí.</p></details>
+        <details><summary>Vezmete každého klienta?</summary><p>Ne. Klienty si vybíráme a kapacitu máme omezenou. Spolupráci nabídneme jen tam, kde po auditu vidíme reálnou šanci na výsledky. Jinak vám dáme doporučení, co dělat sami.</p></details>
         <details><summary>Pracujete jen s kosmetickými salony?</summary><p>Zaměřujeme se na kosmetické salony, kadeřnictví a kliniky. Tam víme, co klienti hledají, co zakazují pravidla reklam a jak se rozhodují.</p></details>
         <details><summary>Fakturujete?</summary><p>Ano, fakturu vystavuje BY studios s.r.o., IČO 23367024. Nejsme plátci DPH, cena je tedy konečná.</p></details>
       </div>
@@ -2031,7 +2034,7 @@ function founderSection(){return `<section class="fn-sec alt"><div class="wrap f
   <p>Proto neslibuju, že vrátím peníze. Slibuju, že vám pomůžu, dokud vám to nebude fungovat.</p><p class="sig">Max</p></div></div></section>`}
 function bindRoi(){const b=document.querySelector('.fn-roi');if(!b)return;const pr=+b.dataset.price;const upd=()=>{const t=+b.querySelector('[data-roi=t]').value||0,v=+b.querySelector('[data-roi=v]').value||1;const n=Math.max(1,Math.ceil(pr/Math.max(1,t*v)));b.querySelector('[data-roi=n]').textContent=n;b.querySelector('[data-roi=s]').textContent=(n===1?'nová klientka':n<5?'nové klientky':'nových klientek')+' a máte investici zpátky'};b.querySelectorAll('input').forEach(i=>i.oninput=upd);upd()}
 function fmtPrice(n){return fmt(n)}
-function funnelShell(inner,key){return `<div class="fn-top"><div class="wrap fn-topin"><span class="logo"><img class="logo-img" src="/img/fully-logo-web.svg" alt="Fully.cz" width="144" height="32"></span><span style="display:flex;gap:16px;align-items:center"><span class="note">+420 737 025 954</span><a class="note" href="/">Zpět na Akademii</a></span></div>${key?urgencyBar(key):''}</div>${inner}`}
+function funnelShell(inner,key){return `<div class="fn-top"><div class="wrap fn-topin"><a class="logo" href="/" aria-label="Fully.cz, hlavní stránka"><img class="logo-img" src="/img/fully-logo-web.svg" alt="Fully.cz" width="144" height="32"></a><span style="display:flex;gap:16px;align-items:center"><span class="note">+420 737 025 954</span><a class="note" href="/">← Zpět na web</a></span></div>${key?urgencyBar(key):''}</div>${inner}`}
 function renderFunnel(key){
   const el=document.getElementById('funnel');
   if(key===SHASH){el.innerHTML=funnelShell(servicesFunnel(),SHASH);bindServices();tickUrg();return}
@@ -2170,10 +2173,12 @@ route();
 (function(){const head=document.querySelector('header.top');const wrap=head.querySelector('.wrap');
  const btn=document.createElement('button');btn.className='menu-btn';btn.type='button';btn.setAttribute('aria-label','Menu');btn.setAttribute('aria-expanded','false');btn.innerHTML='<span></span>';wrap.appendChild(btn);
  const nav=document.createElement('nav');nav.className='mnav';nav.setAttribute('aria-label','Menu');head.appendChild(nav);
- const fill=()=>{const me=AUTH.me();nav.innerHTML=[...document.querySelectorAll('nav.main a')].map(a=>`<a href="${a.getAttribute('href')}">${a.textContent}</a>`).join('')+`<a href="#plan">Plán na 90 dní zdarma</a><a href="#sluzby-na-klic">Služby na klíč</a>`+(me?`<button type="button" data-open-account>Můj účet</button>${me.role==='admin'?'<button type="button" data-open-admin>Administrace</button>':''}`:`<button type="button" id="login-btn">Přihlásit</button>`)};
+ const fill=()=>{const me=AUTH.me();nav.innerHTML=[...document.querySelectorAll('nav.main a')].map(a=>`<a href="${a.getAttribute('href')}">${a.textContent}</a>`).join('')+`<a href="#audit" class="mnav-cta">SEO audit zdarma</a>`+(me?`<button type="button" data-open-account>Můj účet</button>${me.role==='admin'?'<button type="button" data-open-admin>Administrace</button>':''}`:`<button type="button" id="login-btn">Přihlásit</button>`)};
  const close=()=>{head.classList.remove('open');btn.setAttribute('aria-expanded','false')};
  btn.onclick=()=>{fill();const o=head.classList.toggle('open');btn.setAttribute('aria-expanded',o)};
- nav.addEventListener('click',e=>{if(e.target.closest('a,button'))setTimeout(close,0)});
+ nav.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');const t=a&&document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
+  if(t){e.preventDefault();close();requestAnimationFrame(()=>{t.scrollIntoView({behavior:'smooth',block:'start'});try{history.replaceState(null,'',a.getAttribute('href'))}catch(x){}});return}
+  if(e.target.closest('a,button'))setTimeout(close,0)});
  window.addEventListener('hashchange',close);
 })();
 /* temporary site switcher: set SHOW_SITE_SWITCHER=false to hide it */
