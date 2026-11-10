@@ -1022,8 +1022,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
     <div class="chap-head">
       <p class="eyebrow">Chcete to zkusit sami?</p>
       <div>
-        <h2>Kurz <strong>Ukradněte naše reklamy</strong></h2>
-        <p class="lead">Na spolupráci ještě nejste připravení? Vezměte si reklamy, které salonu Better You přinesly nákupy, a šablony pro vaše vlastní kampaně.</p>
+        <h2>Kurzy <strong>pro vlastní reklamy</strong></h2>
+        <p class="lead">Na spolupráci ještě nejste připravení? Nastavte si reklamu pro salon sami podle stejného postupu, nebo si vezměte reklamy, které salonu Better You přinesly nákupy.</p>
       </div>
     </div>
     <div class="offers" id="shelf"></div>
@@ -1351,10 +1351,10 @@ const products = [
 ];
 const sum=a=>a.reduce((t,[,v])=>t+v,0);
 const shelf = document.getElementById('shelf');
-products.filter(p=>p.id==='steal').forEach(p=>{
+['steal','meta'].map(id=>products.find(p=>p.id===id)).forEach(p=>{
   const total=sum(p.stack)+((Date.now()<new Date('2026-11-15T23:59:59+01:00'))?sum(p.bonus):0);
   const el=document.createElement('article');
-  el.className='offer'+(p.dark?' dark':'');
+  el.className='offer dark';
   if(p.id==='xmas') el.id='p-xmas';
   el.innerHTML=`<div class="main">
      <span class="badge" style="justify-self:start">${p.badge}</span>
