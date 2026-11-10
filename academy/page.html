@@ -745,6 +745,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
 @keyframes capPulse{0%{box-shadow:0 0 0 0 rgba(224,36,76,.55)}70%{box-shadow:0 0 0 9px rgba(224,36,76,0)}100%{box-shadow:0 0 0 0 rgba(224,36,76,0)}}
 .cap-l{margin-top:0;background:#fde8ec;color:var(--fg)}
 .cap-hero{margin-top:22px}
+
+.founder-hero{position:relative}
+.fh-badge{position:absolute;z-index:3;top:18%;left:2%;display:grid;gap:2px;padding:14px 18px;border-radius:16px;background:#fff;color:var(--ink);box-shadow:0 18px 40px -16px rgba(0,0,0,.5);font-size:.82rem;font-weight:500;line-height:1.2;transform:rotate(-3deg)}
+.fh-badge b{font-size:1.7rem;font-weight:800;color:var(--gold);line-height:1}
+@media (max-width:860px){.fh-badge{top:10%;left:4%;padding:10px 14px}.fh-badge b{font-size:1.35rem}}
 </style>
 
 <div class="annc">Aktuálně máme kapacitu jen pro <b>2 nové klienty</b>. <a href="#audit">SEO audit webu zdarma</a> a hovor nad výsledky bez závazku.</div>
@@ -786,7 +791,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
         <li>Od strategie po reklamy</li>
       </ul>
     </div>
-    <figure class="founder-hero"><span class="fh-glow" aria-hidden="true"></span><img src="/img/akademie-maxmilian.webp" alt="Maxmilián Snítil, zakladatel Better You" width="615" height="737"><figcaption><b>Maxmilián Snítil</b>Datový analytik, marketér, kosmetik a majitel salonu Better You</figcaption></figure>
+    <figure class="founder-hero"><span class="fh-glow" aria-hidden="true"></span><span class="fh-badge"><b class="tnum">8 let</b>v marketingu</span><img src="/img/akademie-maxmilian.webp" alt="Maxmilián Snítil, zakladatel Better You" width="615" height="737"><figcaption><b>Maxmilián Snítil</b>Datový analytik, marketér, kosmetik a majitel salonu Better You</figcaption></figure>
   </div>
 </section>
 
