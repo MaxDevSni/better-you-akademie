@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: better-you-akademie
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm install --omit=dev
+    startCommand: node server.js
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: IMPORT_FROM
+        value: https://www.better-you.cz
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: MAILGUN_API_KEY
+        sync: false
+      - key: PUBLIC_URL
+        sync: false
+      - key: ACADEMY_ADMIN_PASSWORD
+        sync: false

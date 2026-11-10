@@ -1,0 +1,10 @@
+{
+  "name": "better-you-akademie",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Better You Akademie – marketing a AI pro kosmetické salony (samostatný web)",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=20" },
+  "optionalDependencies": { "nodemailer": "^6.9.0" }
+}
