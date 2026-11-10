@@ -19,72 +19,6 @@
 input[type=radio],input[type=checkbox]{accent-color:var(--gold);width:18px;height:18px}
 @media (max-width:560px){.ckbar{padding:12px 14px;gap:8px;font-size:.8rem}.ckbar p{margin:0}}
 
-/* ---- služby: nová úvodní stránka ---- */
-.trust{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.84rem;color:rgba(255,255,255,.82)}
-.trust li{display:flex;align-items:center;gap:7px}
-.trust li::before{content:"";width:16px;height:16px;border-radius:50%;background:var(--gold-hi) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.2l2.6 2.6L12 5.4' fill='none' stroke='%23121829' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat;flex:none}
-.svc-pains{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.svc-pains>div{border:1px solid var(--line);border-radius:var(--r);padding:22px;background:var(--card);display:grid;gap:8px;align-content:start}
-.svc-pains b{font-size:1.05rem}
-.svc-pains p{color:var(--muted);font-size:.94rem}
-.proc{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:none}
-.proc li{display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px}
-.proc-n{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--on-ink);font-weight:700;font-size:1.2rem}
-.proc h3{font-size:1.2rem;margin-bottom:6px}
-.proc p{color:var(--muted);max-width:68ch}
-.proc small{display:inline-block;margin-top:10px;font-weight:600;color:var(--gold);font-size:.86rem}
-.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.svc-grid>div{background:var(--card);padding:24px;display:grid;gap:8px;align-content:start}
-.svc-grid>div.hl{background:var(--ink);color:var(--on-ink)}
-.svc-grid>div.hl p{color:color-mix(in srgb,var(--on-ink) 75%,transparent)}
-.svc-grid h3{font-size:1.08rem}
-.svc-grid p{color:var(--muted);font-size:.93rem}
-.cs-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-.cs-stats>div{background:var(--ink);color:var(--on-ink);border-radius:var(--r);padding:22px}
-.cs-stats b{display:block;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;letter-spacing:-.02em;color:var(--gold-hi)}
-.cs-stats small{color:color-mix(in srgb,var(--on-ink) 72%,transparent);font-size:.84rem;line-height:1.45;display:block;margin-top:6px}
-.cs-chart{margin:24px 0 0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 22px 14px}
-.cs-chart figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;margin-bottom:18px;font-size:.9rem}
-.cs-chart figcaption span{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.84rem}
-.cs-chart i{display:inline-block;width:12px;height:12px;border-radius:3px}
-.k-s{background:#c3cde3}.k-v{background:var(--gold)}
-.bars{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:8px;align-items:end;height:240px}
-.bar{display:grid;grid-template-rows:1fr auto;height:100%;min-width:0;gap:6px}
-.bar .col{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:3px}
-.bar .s,.bar .v{width:42%;max-width:22px;border-radius:4px 4px 0 0}
-.bar .s{background:#c3cde3}.bar .v{background:var(--gold)}
-.bar small{text-align:center;font-size:.72rem;color:var(--muted)}
-.bar .r{position:absolute;top:-2px;left:0;right:0;text-align:center;font-size:.68rem;font-weight:700;color:var(--fg)}
-.cs-more{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:16px}
-.cs-more>div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:10px;align-content:start}
-.cs-more p:not(.eyebrow){color:var(--muted);font-size:.94rem}
-.cs-more b{color:var(--fg)}
-.cs-more ul{margin:0;padding-left:1.1em;display:grid;gap:5px;color:var(--muted);font-size:.94rem}
-.cs-src{margin-top:16px;max-width:90ch}
-.kpi-g{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;background:var(--ink);color:var(--on-ink);border-radius:20px;padding:clamp(24px,5vw,52px)}
-.kpi-seal{width:160px;height:160px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--gold-hi);font-size:2.6rem;font-weight:800;color:var(--gold-hi)}
-.kpi-g .eyebrow{color:var(--gold-hi)}
-.kpi-g h2{font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:300;margin:12px 0 14px}
-.kpi-g h2 strong{font-weight:700}
-.kpi-g .lead{color:color-mix(in srgb,var(--on-ink) 78%,transparent)}
-.kpi-g .note{color:color-mix(in srgb,var(--on-ink) 65%,transparent);margin-top:16px}
-.kpi-split{display:grid;grid-template-columns:1fr 2fr;gap:12px;margin-top:22px}
-.kpi-split>div{border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:16px;display:grid;gap:6px}
-.kpi-split>div.on{background:rgba(143,173,255,.14);border-color:var(--gold-hi)}
-.kpi-split b{font-size:1.1rem}
-.kpi-split span{font-size:.9rem;color:color-mix(in srgb,var(--on-ink) 75%,transparent)}
-.fit{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.fit>div{border:1px solid var(--line);border-radius:var(--r);padding:24px;background:var(--card)}
-.fit b{display:block;margin-bottom:10px;font-size:1.05rem}
-.fit .yes b{color:var(--good)} .fit .no b{color:#b5523b}
-.fit ul{margin:0;padding-left:1.1em;display:grid;gap:6px;color:var(--muted)}
-.audit-l{margin:18px 0 0;padding-left:1.1em;display:grid;gap:6px}
-.au-want{border:0;padding:0;margin:0;display:grid;gap:8px}
-.au-want legend{font-weight:600;font-size:.88rem;margin-bottom:6px}
-.f .au-want label{display:grid;grid-template-columns:20px 1fr;align-items:center;gap:10px;font-weight:400;font-size:.92rem}
-.f .au-want input{width:18px;height:18px;margin:0;padding:0}
-@media (max-width:480px){.acct .btn:not(.ghost){display:none}}
-@media (max-width:860px){.kpi-g{grid-template-columns:1fr;gap:20px}.kpi-seal{width:110px;height:110px;font-size:1.9rem}.kpi-split{grid-template-columns:1fr}.fit{grid-template-columns:1fr}.proc li{grid-template-columns:40px 1fr;gap:14px;padding:18px}.proc-n{width:38px;height:38px;font-size:1rem}.bars{height:200px;gap:4px}.bar .r{font-size:.6rem}}
 </style>
 </head>
 <body>
@@ -656,6 +590,109 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
 .sheet .box{background:var(--card);color:var(--fg);border-radius:18px;width:min(480px,100%);max-height:100%;overflow:auto;padding:28px;display:grid;gap:16px}
 .sheet .row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-bottom:1px solid var(--line);padding-bottom:14px}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:.7em 1.2em;border-radius:999px;font-size:.86rem;z-index:90}
+
+/* ---- služby: nová úvodní stránka ---- */
+.trust{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.84rem;color:rgba(255,255,255,.82)}
+.trust li{display:flex;align-items:center;gap:7px}
+.trust li::before{content:"";width:16px;height:16px;border-radius:50%;background:var(--gold-hi) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.2l2.6 2.6L12 5.4' fill='none' stroke='%23121829' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat;flex:none}
+.ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--gold-soft);color:var(--gold);flex:none}
+.ic svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.svc-pains{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.svc-pains>div{border-radius:18px;padding:26px 22px;background:var(--bg-2);display:grid;gap:12px;align-content:start;position:relative;overflow:hidden}
+.svc-pains>div::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--cta);transform:scaleX(.18);transform-origin:left}
+.svc-pains .ic{background:#fde8ec;color:var(--cta)}
+.svc-pains b{font-size:1.06rem;line-height:1.3}
+.svc-pains p{color:var(--muted);font-size:.93rem}
+.proc-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:start}
+.proc-ph{margin:0;position:sticky;top:96px;border-radius:22px;overflow:hidden;box-shadow:0 24px 60px -24px rgba(18,24,41,.45)}
+.proc-ph img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.proc-ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px 22px 20px;color:#fff;font-weight:600;background:linear-gradient(transparent,rgba(12,17,36,.85))}
+.proc{list-style:none;margin:0;padding:0;display:grid;gap:0;position:relative}
+.proc::before{content:"";position:absolute;left:23px;top:24px;bottom:24px;width:2px;background:linear-gradient(var(--gold),var(--gold-soft))}
+.proc li{display:grid;grid-template-columns:48px 1fr;gap:22px;align-items:start;padding:0 0 30px;position:relative}
+.proc li:last-child{padding-bottom:0}
+.proc-n{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#fff;font-weight:700;font-size:1.15rem;box-shadow:0 0 0 6px var(--bg-2)}
+.proc li>div{background:var(--card);border-radius:16px;padding:20px 22px;box-shadow:0 10px 30px -18px rgba(18,24,41,.35)}
+.proc h3{font-size:1.18rem;margin-bottom:6px}
+.proc p{color:var(--muted);font-size:.95rem}
+.proc small{display:inline-flex;margin-top:12px;font-weight:600;color:var(--gold);font-size:.84rem;background:var(--gold-soft);padding:.35em .8em;border-radius:999px}
+.svc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.svc-grid>div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;display:grid;gap:10px;align-content:start;transition:transform .2s ease,box-shadow .2s ease}
+.svc-grid>div:hover{transform:translateY(-3px);box-shadow:0 18px 40px -22px rgba(18,24,41,.4)}
+.svc-grid>div.hl{background:linear-gradient(160deg,#24307a,#121829);color:var(--on-ink);border-color:transparent}
+.svc-grid>div.hl .ic{background:rgba(255,255,255,.12);color:var(--gold-hi)}
+.svc-grid>div.hl p{color:color-mix(in srgb,var(--on-ink) 78%,transparent)}
+.svc-grid h3{font-size:1.08rem}
+.svc-grid p{color:var(--muted);font-size:.92rem}
+.cs-banner{margin:0 0 18px;position:relative;border-radius:22px;overflow:hidden;height:clamp(250px,32vw,380px)}
+.cs-banner img{width:100%;height:100%;object-fit:cover;display:block}
+.cs-banner figcaption{position:absolute;left:0;bottom:0;right:0;padding:60px clamp(18px,3vw,32px) 22px;color:#fff;background:linear-gradient(transparent,rgba(12,17,36,.8));font-size:.92rem}
+.cs-banner b{display:block;font-size:clamp(1.4rem,3vw,2rem)}
+.cs-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.cs-stats>div{background:var(--ink);color:var(--on-ink);border-radius:18px;padding:22px}
+.cs-stats>div:nth-child(3){background:var(--gold)}
+.cs-stats>div:nth-child(3) b{color:#fff}
+.cs-stats b{display:block;font-size:clamp(1.5rem,2.6vw,2.2rem);font-weight:700;letter-spacing:-.02em;color:var(--gold-hi)}
+.cs-stats small{color:color-mix(in srgb,var(--on-ink) 78%,transparent);font-size:.84rem;line-height:1.45;display:block;margin-top:6px}
+.cs-chart{margin:18px 0 0;background:var(--card);border-radius:18px;padding:24px 24px 16px;box-shadow:0 10px 30px -18px rgba(18,24,41,.3)}
+.cs-chart figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;margin-bottom:22px;font-size:.95rem}
+.cs-chart figcaption span{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.84rem}
+.cs-chart i{display:inline-block;width:12px;height:12px;border-radius:3px}
+.k-s{background:#c3cde3}.k-v{background:var(--gold)}
+.bars{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:10px;align-items:end;height:260px;background:repeating-linear-gradient(to top,var(--line) 0 1px,transparent 1px 25%)}
+.bar{display:grid;grid-template-rows:1fr auto;height:100%;min-width:0;gap:6px}
+.bar .col{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:3px}
+.bar .s,.bar .v{width:40%;max-width:24px;border-radius:5px 5px 0 0}
+.bar .s{background:#c3cde3}.bar .v{background:linear-gradient(var(--gold),#5b82f0)}
+.bar small{text-align:center;font-size:.72rem;color:var(--muted)}
+.bar .r{position:absolute;top:-4px;left:0;right:0;text-align:center;font-size:.7rem;font-weight:700;color:var(--fg)}
+.cs-more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+.cs-more>div{background:var(--card);border-radius:18px;padding:22px;display:grid;gap:10px;align-content:start;box-shadow:0 10px 30px -18px rgba(18,24,41,.3)}
+.cs-more p:not(.eyebrow){color:var(--muted);font-size:.94rem}
+.cs-more b{color:var(--fg)}
+.cs-more ul{margin:0;padding-left:1.1em;display:grid;gap:5px;color:var(--muted);font-size:.94rem}
+.cs-src{margin-top:16px;max-width:90ch}
+.kpi-g{display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:center;background:radial-gradient(120% 120% at 0% 0%,#2b3a8f 0%,#16204a 50%,#121829 100%);color:var(--on-ink);border-radius:26px;padding:clamp(26px,5vw,56px)}
+.kpi-seal{width:170px;height:170px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--gold-hi);font-size:2.8rem;font-weight:800;color:#fff;background:rgba(143,173,255,.12);box-shadow:0 0 0 12px rgba(143,173,255,.07)}
+.kpi-g .eyebrow{color:var(--gold-hi)}
+.kpi-g h2{font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:300;margin:12px 0 14px}
+.kpi-g h2 strong{font-weight:700}
+.kpi-g .lead{color:color-mix(in srgb,var(--on-ink) 80%,transparent)}
+.kpi-g .note{color:color-mix(in srgb,var(--on-ink) 65%,transparent);margin-top:16px}
+.kpi-split{display:grid;grid-template-columns:1fr 2fr;gap:12px;margin-top:22px}
+.kpi-split>div{border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:16px 18px;display:grid;gap:6px}
+.kpi-split>div.on{background:rgba(143,173,255,.16);border-color:var(--gold-hi)}
+.kpi-split b{font-size:1.15rem}
+.kpi-split span{font-size:.9rem;color:color-mix(in srgb,var(--on-ink) 78%,transparent)}
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.fit>div{border-radius:20px;padding:28px}
+.fit .yes{background:#eaf6ee}.fit .no{background:#fbecea}
+.fit b{display:block;margin-bottom:14px;font-size:1.12rem}
+.fit .yes b{color:var(--good)} .fit .no b{color:#b5523b}
+.fit ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;color:var(--fg)}
+.fit li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start}
+.fit li::before{content:"";width:22px;height:22px;border-radius:50%;margin-top:1px}
+.fit .yes li::before{background:var(--good) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.2l2.6 2.6L12 5.4' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.fit .no li::before{background:#b5523b url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M5 5l6 6M11 5l-6 6' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/14px no-repeat}
+.audit-band{background:radial-gradient(120% 90% at 80% 0%,#24307a 0%,#16204a 45%,#121829 100%);color:#fff}
+.audit-band .eyebrow{color:var(--gold-hi)}
+.audit-band .lead{color:rgba(255,255,255,.8)}
+.audit-band h2 strong{color:#fff}
+.audit-l{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:10px}
+.audit-l li{display:grid;grid-template-columns:22px 1fr;gap:10px}
+.audit-l li::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--gold-hi) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.2l2.6 2.6L12 5.4' fill='none' stroke='%23121829' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.audit-band form.f{background:var(--card);color:var(--fg);border-radius:22px;padding:clamp(20px,3vw,32px);box-shadow:0 30px 70px -30px rgba(0,0,0,.6)}
+.f .au-want{border:0;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.f .au-want legend{font-weight:500;font-size:.84rem;color:var(--muted);margin-bottom:6px}
+.f .au-want label{display:grid;grid-template-columns:18px 1fr;align-items:center;gap:8px;font-weight:500;font-size:.88rem;color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:.6em .7em;cursor:pointer}
+.f .au-want label:has(input:checked){border-color:var(--gold);background:var(--gold-soft)}
+.f .au-want input{width:18px;height:18px;margin:0;padding:0}
+.tools{gap:14px;border-top:0}
+.tools div{padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+@media (max-width:480px){.acct .btn:not(.ghost){display:none}}
+@media (max-width:1000px){.svc-pains,.svc-grid,.cs-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.cs-more{grid-template-columns:1fr}}
+@media (max-width:860px){.proc-wrap{grid-template-columns:1fr}.proc-ph{position:relative;top:0;max-height:340px}.proc-ph img{aspect-ratio:auto;height:340px}.kpi-g{grid-template-columns:1fr;gap:20px}.kpi-seal{width:110px;height:110px;font-size:1.9rem}.kpi-split{grid-template-columns:1fr}.fit{grid-template-columns:1fr}.bars{height:210px;gap:4px}.bar .r{font-size:.58rem}.tools{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.svc-pains,.svc-grid{grid-template-columns:1fr}.cs-stats{grid-template-columns:1fr 1fr;gap:10px}.cs-stats>div{padding:16px}.f .au-want{grid-template-columns:1fr}}
 </style>
 
 <div class="annc">Pro salony, kadeřnictví a kliniky: <a href="#audit">SEO audit webu zdarma</a> a hovor nad výsledky bez závazku.</div>
@@ -709,10 +746,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
       <p class="lead">Majitelé provozoven, se kterými mluvím, většinou neřeší, jak ošetřovat nebo stříhat. Řeší, proč se to nepromítá do diáře.</p></div>
     </div>
     <div class="svc-pains">
-      <div><b>Klienti chodí hlavně na doporučení</b><p>Když se doporučení zastaví, zastaví se i diář. Na Googlu vás přitom hledají každý den.</p></div>
-      <div><b>Reklama „nefunguje“</b><p>Utratili jste pár tisíc za podpořené příspěvky a nevíte, kolik rezervací vám to přineslo.</p></div>
-      <div><b>Web je vizitka, ne obchodník</b><p>Hezky vypadá, ale chybí ceník, online rezervace a měření. Návštěvník odejde a už se nevrátí.</p></div>
-      <div><b>Agentura chce peníze, výsledky neukazuje</b><p>Měsíční faktura chodí pravidelně. Report s cenou za nového klienta už ne.</p></div>
+      <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5c1.9.8 3 2.7 3 5.5"/></svg></span><b>Klienti chodí hlavně na doporučení</b><p>Když se doporučení zastaví, zastaví se i diář. Na Googlu vás přitom hledají každý den.</p></div>
+      <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h3l5 4V6L7 10H4a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6M19 6a8 8 0 0 1 0 12"/></svg></span><b>Reklama „nefunguje“</b><p>Utratili jste pár tisíc za podpořené příspěvky a nevíte, kolik rezervací vám to přineslo.</p></div>
+      <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M3 8h18"/></svg></span><b>Web je vizitka, ne obchodník</b><p>Hezky vypadá, ale chybí ceník, online rezervace a měření. Návštěvník odejde a už se nevrátí.</p></div>
+      <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span><b>Agentura chce peníze, výsledky neukazuje</b><p>Měsíční faktura chodí pravidelně. Report s cenou za nového klienta už ne.</p></div>
     </div>
   </div>
 </section>
@@ -724,13 +761,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
       <div><h2>Nejdřív strategie. <strong>Pak teprve reklama.</strong></h2>
       <p class="lead">Nekupujete si jednotlivé služby. Projdeme spolu proces, ve kterém každý krok staví na tom předchozím a končí hotovým výstupem.</p></div>
     </div>
-    <ol class="proc">
+    <div class="proc-wrap"><figure class="proc-ph"><img src="/img/akademie-tym-pristroj.webp" alt="Tým salonu Better You u přístroje" loading="lazy" width="800" height="1066"><figcaption>Celý proces jsme nejdřív postavili pro vlastní salon.</figcaption></figure><ol class="proc">
       <li><span class="proc-n">1</span><div><h3>Audit a strategie</h3><p>SEO audit webu, rozbor konkurence ve vašem okolí, ceník a cílová klientela. Domluvíme si konkrétní KPI, třeba počet rezervací nebo cenu za nového klienta.</p><small>Výstup: strategie a cíle, pod které se oba podepíšeme</small></div></li>
       <li><span class="proc-n">2</span><div><h3>Digitální identita a design</h3><p>Vizuální styl, tón komunikace a fotky s videi, které natočíme s tvůrci obsahu. Aby vás klient poznal na Instagramu, na webu i v reklamě.</p><small>Výstup: vizuální manuál a první sada kreativ</small></div></li>
       <li><span class="proc-n">3</span><div><h3>Web a prodejní funnel</h3><p>Rychlý web s ceníkem, online rezervací, prodejem dárkových poukazů a měřením konverzí. Každá stránka má jeden úkol: dovést návštěvníka k rezervaci.</p><small>Výstup: funnel, který mění návštěvu na rezervaci</small></div></li>
       <li><span class="proc-n">4</span><div><h3>Reklamy a organika</h3><p>Meta, Google Ads a Sklik spolu se SEO, profilem na Googlu a Mapy.com. Placená reklama přivede klienty hned, organika vám je nosí dlouhodobě.</p><small>Výstup: kampaně běží a měří cenu za rezervaci</small></div></li>
       <li><span class="proc-n">5</span><div><h3>Měření a optimalizace</h3><p>Každý týden ladíme kampaně, každý měsíc dostanete report s čísly proti domluveným KPI. Co nefunguje, vypneme. Co funguje, posílíme.</p><small>Výstup: přesně víte, kolik vás stojí nový klient</small></div></li>
-    </ol>
+    </ol></div>
   </div>
 </section>
 
@@ -742,14 +779,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
       <p class="lead">Jeden partner, jedna strategie a jeden report. Žádné přehazování odpovědnosti mezi grafikem, programátorem a „reklamákem“.</p></div>
     </div>
     <div class="svc-grid">
-      <div><h3>Meta reklamy</h3><p>Kampaně na Facebooku a Instagramu s cílem Prodej, měření přes Pixel i Conversions API. Přesně tak, jak je vedeme pro Better You.</p></div>
-      <div><h3>Content creatoři</h3><p>Krátká videa a fotky s tvůrci obsahu pro reklamy i sociální sítě. Skutečné prostředí, skuteční lidé, žádné fotobanky.</p></div>
-      <div><h3>Google Ads</h3><p>Reklama ve vyhledávání pro lidi, kteří právě teď hledají vaše ošetření nebo službu ve vašem městě.</p></div>
-      <div><h3>Sklik</h3><p>Vyhledávání a obsahová síť Seznamu. Pro část klientů je Seznam pořád první místo, kde hledají.</p></div>
-      <div><h3>Web na míru</h3><p>Rychlý web s ceníkem, online rezervací, prodejem poukazů a blogem. Napojený na měření od prvního dne.</p></div>
-      <div class="hl"><h3>Prodejní funnel</h3><p>Vstupní stránky pro jednotlivá ošetření a sezónní nabídky, které vedou návštěvníka krok za krokem k rezervaci nebo nákupu poukazu.</p></div>
-      <div><h3>SEO a Mapy</h3><p>Stránky pro to, co lidé ve vašem okolí hledají, profil na Googlu a Mapy.com, recenze. Klienti zdarma, měsíc co měsíc.</p></div>
-      <div><h3>Strategie a design</h3><p>Positioning, ceník, vizuální identita a plán obsahu. Základ, bez kterého je každá reklama jen drahý pokus.</p></div>
+      <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span><h3>Meta reklamy</h3><p>Kampaně na Facebooku a Instagramu s cílem Prodej, měření přes Pixel i Conversions API. Přesně tak, jak je vedeme pro Better You.</p></div>
+      <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg></span><h3>Content creatoři</h3><p>Krátká videa a fotky s tvůrci obsahu pro reklamy i sociální sítě. Skutečné prostředí, skuteční lidé, žádné fotobanky.</p></div>
+      <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg></span><h3>Google Ads</h3><p>Reklama ve vyhledávání pro lidi, kteří právě teď hledají vaše ošetření nebo službu ve vašem městě.</p></div>
+      <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/><circle cx="18" cy="16" r="3"/><path d="M20.2 18.2L22 20"/></svg></span><h3>Sklik</h3><p>Vyhledávání a obsahová síť Seznamu. Pro část klientů je Seznam pořád první místo, kde hledají.</p></div>
+      <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg></span><h3>Web na míru</h3><p>Rychlý web s ceníkem, online rezervací, prodejem poukazů a blogem. Napojený na měření od prvního dne.</p></div>
+      <div class="hl"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg></span><h3>Prodejní funnel</h3><p>Vstupní stránky pro jednotlivá ošetření a sezónní nabídky, které vedou návštěvníka krok za krokem k rezervaci nebo nákupu poukazu.</p></div>
+      <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><h3>SEO a Mapy</h3><p>Stránky pro to, co lidé ve vašem okolí hledají, profil na Googlu a Mapy.com, recenze. Klienti zdarma, měsíc co měsíc.</p></div>
+      <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span><h3>Strategie a design</h3><p>Positioning, ceník, vizuální identita a plán obsahu. Základ, bez kterého je každá reklama jen drahý pokus.</p></div>
     </div>
   </div>
 </section>
@@ -761,6 +798,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
       <div><h2>Better You, Hradec Králové: <strong>čísla přímo z účtů</strong></h2>
       <p class="lead">Všechno, co vám nabízím, jsem nejdřív za vlastní peníze vyzkoušel ve svém salonu. Tady jsou výsledky ze Správce reklam Meta, Google Ads a Search Console.</p></div>
     </div>
+    <figure class="cs-banner"><img src="/img/akademie-salon.webp" alt="Interiér salonu Better You v Hradci Králové" width="1400" height="1050"><figcaption><b>Better You</b>kosmetický salon, Gočárova třída, Hradec Králové</figcaption></figure>
     <div class="cs-stats">
       <div><b class="tnum">410 797 Kč</b><small>investováno do Meta reklam<br>1. 1. – 9. 11. 2026</small></div>
       <div><b class="tnum">3,71 mil. Kč</b><small>hodnota nákupů a rezervací<br>z těchto reklam</small></div>
@@ -826,7 +864,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
   </div>
 </section>
 
-<section class="chap alt" id="audit">
+<section class="chap audit-band" id="audit">
   <div class="wrap contact">
     <div>
       <p class="eyebrow">Zdarma a bez závazku</p>
