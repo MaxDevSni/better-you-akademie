@@ -48,9 +48,11 @@ module.exports = function academy(ctx) {
     d.academy = d.academy || {};
     const a = d.academy;
     a.users = a.users || []; a.sessions = a.sessions || {}; a.orders = a.orders || []; a.leads = a.leads || []; a.resets = a.resets || {};
+    if (process.env.ACADEMY_ADMIN_PASSWORD && !A.synced) { A.synced = true; const ad = a.users.find((u) => u.login === 'admin'); if (ad) { Object.assign(ad, hashPw(process.env.ACADEMY_ADMIN_PASSWORD)); save(); } }
     if (!a.users.some((u) => u.login === 'admin')) {
-      a.users.push({ id: rid(), login: 'admin', email: '', name: 'Administrátor', role: 'admin', ...hashPw(process.env.ACADEMY_ADMIN_PASSWORD || 'admin'), access: [], created: new Date().toISOString() });
-      if (!a.demoSeeded) { a.demoSeeded = true; a.users.push({ id: rid(), login: 'user', email: '', name: 'Ukázková členka', role: 'member', demo: true, ...hashPw('user'), access: [...PATHS, 'tables', 'prompts'], created: new Date().toISOString() }); }
+      const prod = process.env.NODE_ENV === 'production';
+      a.users.push({ id: rid(), login: 'admin', email: '', name: 'Administrátor', role: 'admin', ...hashPw(process.env.ACADEMY_ADMIN_PASSWORD || (prod ? crypto.randomBytes(24).toString('hex') : 'admin')), access: [], created: new Date().toISOString() });
+      if (!a.demoSeeded && !prod) { a.demoSeeded = true; a.users.push({ id: rid(), login: 'user', email: '', name: 'Ukázková členka', role: 'member', demo: true, ...hashPw('user'), access: [...PATHS, 'tables', 'prompts'], created: new Date().toISOString() }); }
       save();
     }
     // Ukázkový účet user / user se vším obsahem (na přání majitele). Když ho v administraci smažete, znovu se nevytvoří.
