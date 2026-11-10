@@ -39,8 +39,8 @@ module.exports = function academy(ctx) {
   const { send, readBody, limited, hashPw, verifyPw, cookieVal, stripe, onlinePay, origin, mail, escH, issueInvoice, sendInvoice, conversion, INV } = ctx;
   // E-maily Akademie mají v patičce telefon Akademie, ne salonu
   const mailHtml = (o) => ctx.mailHtml(o).replace(/tel:\+420602370528/g, 'tel:+420737025954').replace(/\+420 602 370 528/g, '+420 737 025 954').replace('kosmetický salon<br>', 'Akademie pro salony<br>')
-    .replace(/#2a837e/g, '#376dff').replace(/#3f9e99/g, '#121829').replace(/#f6f2ec/g, '#f5f8fd').replace(/#ece3d6/g, '#e3e8f2').replace(/#faf7f2/g, '#f5f8fd')
-    .replace(/#8e6f3e/g, '#f33254').replace(/#fbf3e6/g, '#eef3ff').replace(/#5a4a33/g, '#1f2a44').replace(/#7a6f63/g, '#5d6273').replace(/#1f1c19/g, '#121829');
+    .replace(/#2a837e/g, '#2a5ae8').replace(/#3f9e99/g, '#121829').replace(/#f6f2ec/g, '#f5f8fd').replace(/#ece3d6/g, '#e3e8f2').replace(/#faf7f2/g, '#f5f8fd')
+    .replace(/#8e6f3e/g, '#e0244c').replace(/#fbf3e6/g, '#eef3ff').replace(/#5a4a33/g, '#1f2a44').replace(/#7a6f63/g, '#5d6273').replace(/#1f1c19/g, '#121829');
   const db = () => ctx.db();
   const save = () => ctx.save();
   const A = () => {
@@ -155,7 +155,7 @@ module.exports = function academy(ctx) {
         ['Přístup', member ? escH('členství, obnovuje se měsíčně, zrušíte kdykoli') : escH('12 měsíců od dnešního dne')]],
       ctas: [['Otevřít Akademii', site + '/?ucet=1'], ['Plán růstu zdarma', site + '/#plan']],
       tipsTitle: 'Jak začít', tips,
-      note: 'Fakturu vám posíláme samostatným e-mailem. Když se kdekoli zaseknete, odpovězte na tento e-mail nebo zavolejte na <a href="tel:+420737025954" style="color:#376dff">737 025 954</a>. Pomůžeme vám zdarma, dokud to nebude fungovat.' });
+      note: 'Fakturu vám posíláme samostatným e-mailem. Když se kdekoli zaseknete, odpovězte na tento e-mail nebo zavolejte na <a href="tel:+420737025954" style="color:#2a5ae8">737 025 954</a>. Pomůžeme vám zdarma, dokud to nebude fungovat.' });
     const text = `Dobrý den,\n\nděkujeme za objednávku: ${o.items.map((i) => i.name).join(', ')} (celkem ${kc(o.total)}).\nObsah najdete po přihlášení: ${site}/?ucet=1\n\nJak začít:\n- ${tips.join('\n- ')}\n\nPomoc: odpovězte na tento e-mail nebo volejte 737 025 954.\n\nBetter You Akademie`;
     return mail(to, (opt.subjectPrefix || '') + 'Děkujeme, váš přístup do Better You Akademie je aktivní', text, html);
   }
