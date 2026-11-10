@@ -628,6 +628,16 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
 .cs-banner img{width:100%;height:100%;object-fit:cover;display:block}
 .cs-banner figcaption{position:absolute;left:0;bottom:0;right:0;padding:60px clamp(18px,3vw,32px) 22px;color:#fff;background:linear-gradient(transparent,rgba(12,17,36,.8));font-size:.92rem}
 .cs-banner b{display:block;font-size:clamp(1.4rem,3vw,2rem)}
+.cs-story{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:stretch;margin-bottom:18px}
+.cs-story>div:not(.arr){background:var(--card);border-radius:18px;padding:22px;display:grid;gap:8px;align-content:start;box-shadow:0 10px 30px -18px rgba(18,24,41,.3)}
+.cs-story>div.on{background:#eaf6ee}
+.cs-story b{font-size:1.15rem}
+.cs-story p{color:var(--muted);font-size:.94rem}
+.cs-tag{justify-self:start;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3em .8em;border-radius:999px;background:var(--gold-soft);color:var(--gold)}
+.cs-story .on .cs-tag{background:var(--good);color:#fff}
+.cs-story .arr{display:grid;place-items:center;color:var(--gold)}
+.cs-story .arr svg{width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:760px){.cs-story{grid-template-columns:1fr}.cs-story .arr{transform:rotate(90deg);height:28px}}
 .cs-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 .cs-stats>div{background:var(--ink);color:var(--on-ink);border-radius:18px;padding:22px}
 .cs-stats>div:nth-child(3){background:var(--gold)}
@@ -796,9 +806,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
     <div class="chap-head">
       <p class="eyebrow">Případová studie</p>
       <div><h2>Better You, Hradec Králové: <strong>čísla přímo z účtů</strong></h2>
-      <p class="lead">Všechno, co vám nabízím, jsem nejdřív za vlastní peníze vyzkoušel ve svém salonu. Tady jsou výsledky ze Správce reklam Meta, Google Ads a Search Console.</p></div>
+      <p class="lead">Better You jsme postavili od nuly a všechno, co vám nabízím, jsme nejdřív za vlastní peníze vyzkoušeli na něm. Tady jsou výsledky ze Správce reklam Meta, Google Ads a Search Console.</p></div>
     </div>
     <figure class="cs-banner"><img src="/img/akademie-salon.webp" alt="Interiér salonu Better You v Hradci Králové" width="1400" height="1050"><figcaption><b>Better You</b>kosmetický salon, Gočárova třída, Hradec Králové</figcaption></figure>
+    <div class="cs-story">
+      <div><span class="cs-tag">Start</span><b>Salon postavený od nuly</b><p>Žádná zavedená klientela, žádné jméno ve městě. Každou první klientku nám přivedl web, Google a reklama.</p></div>
+      <div class="arr" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg></div>
+      <div class="on"><span class="cs-tag">Po roce</span><b>Klienti se vracejí sami</b><p>Máme stálou klientelu, která se objednává znovu a doporučuje nás dál. Proto už nemusíme do reklamy dávat tolik jako na začátku.</p></div>
+    </div>
     <div class="cs-stats">
       <div><b class="tnum">410 797 Kč</b><small>investováno do Meta reklam<br>1. 1. – 9. 11. 2026</small></div>
       <div><b class="tnum">3,71 mil. Kč</b><small>hodnota nákupů a rezervací<br>z těchto reklam</small></div>
