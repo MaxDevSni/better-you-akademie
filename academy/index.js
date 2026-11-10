@@ -17,6 +17,7 @@ const CATALOG = {
   xmas: { name: 'Vyprodané Vánoce 2026', price: 1990, grants: ['xmas'] },
   ai: { name: 'AI asistentka vašeho salonu', price: 4990, grants: ['ai'] },
   elearn: { name: 'Salon, který se objednává sám', price: 3990, grants: ['elearn'] },
+  agents: { name: '5 AI agentů pro váš salon', price: 3990, grants: ['agents'] },
   tables: { name: 'Sada 16 excelových nástrojů', price: 1490, grants: ['tables'] },
   prompts: { name: 'Knihovna 120 promptů pro salony', price: 990, grants: ['prompts'] },
   member: { name: 'Členství Better You Akademie', price: 2990, grants: ['member'], recurring: true },
@@ -30,10 +31,10 @@ const CATALOG = {
   'steal-up': { name: 'Ukradněte naše reklamy (nabídka k objednávce)', price: 1490, grants: ['steal'], upsellOnly: true },
   'meta-up': { name: 'Reklama, která plní diář (nabídka k objednávce)', price: 1290, grants: ['meta'], upsellOnly: true },
 };
-const PATHS = ['meta', 'steal', 'xmas', 'ai', 'elearn'];
-const PATH_CONTENT_ID = { meta: 'meta', steal: 'steal', xmas: 'xmas', ai: 'ai', elearn: 'booking' };
-const LABEL = { meta: 'Reklama, která plní diář', steal: 'Ukradněte naše reklamy', xmas: 'Vyprodané Vánoce 2026', ai: 'AI asistentka', elearn: 'Salon, který se objednává sám', tables: 'Sada 16 tabulek', prompts: 'Knihovna promptů', member: 'Členství', call: 'Strategický hovor', consult: 'Konzultace', mentor: 'Mentoring' };
-const FUNNEL_UPSELL = { 'ukradnete-reklamy': 'member-first', 'ai-asistentka': 'member-first', 'plny-diar': 'steal-up', 'vyprodane-vanoce': 'steal-up', 'objednava-sama': 'meta-up' };
+const PATHS = ['meta', 'steal', 'xmas', 'ai', 'elearn', 'agents'];
+const PATH_CONTENT_ID = { meta: 'meta', steal: 'steal', xmas: 'xmas', ai: 'ai', elearn: 'booking', agents: 'agents' };
+const LABEL = { meta: 'Reklama, která plní diář', steal: 'Ukradněte naše reklamy', xmas: 'Vyprodané Vánoce 2026', ai: 'AI asistentka', elearn: 'Salon, který se objednává sám', agents: '5 AI agentů', tables: 'Sada 16 tabulek', prompts: 'Knihovna promptů', member: 'Členství', call: 'Strategický hovor', consult: 'Konzultace', mentor: 'Mentoring' };
+const FUNNEL_UPSELL = { 'ukradnete-reklamy': 'member-first', 'ai-asistentka': 'member-first', 'plny-diar': 'steal-up', 'vyprodane-vanoce': 'steal-up', 'objednava-sama': 'meta-up', 'ai-agenti': 'member-first' };
 
 module.exports = function academy(ctx) {
   const { send, readBody, limited, hashPw, verifyPw, cookieVal, stripe, onlinePay, origin, mail, escH, issueInvoice, sendInvoice, conversion, INV } = ctx;
@@ -135,7 +136,8 @@ module.exports = function academy(ctx) {
     xmas: 'Vyprodané Vánoce 2026: ještě tento týden připravte balíčky poukazů podle 1. kroku. Čím dřív bude nabídka hotová, tím víc poukazů prodáte.',
     ai: 'AI asistentka: v 1. kroku nastavíte hlas značky. Pak vám AI píše příspěvky i odpovědi jako váš salon.',
     elearn: 'Salon, který se objednává sám: začněte Google profilem a recenzemi, to je nejrychlejší cesta k novým klientkám.',
-    member: 'Členství: máte všech 5 cest, 16 tabulek a 120 promptů. Nevíte, kde začít? Udělejte si v Akademii plán růstu na 90 dní.',
+    agents: '5 AI agentů: začněte lekcí Mozek salonu. Jeden dokument, ze kterého pak čerpá všech 5 agentů.',
+    member: 'Členství: máte všech 6 cest, 16 tabulek a 120 promptů. Nevíte, kde začít? Udělejte si v Akademii plán růstu na 90 dní.',
     call: 'Strategický hovor: do 24 hodin v pracovní dny vám pošleme termíny. Připravte si tržby, útratu za reklamu a počet nových klientek za poslední 3 měsíce.',
     consult: 'Konzultace: do 24 hodin v pracovní dny vám pošleme termíny.',
   };
@@ -371,7 +373,7 @@ module.exports = function academy(ctx) {
   // ---------- stránky ----------
   let PAGE = null;
   const page = () => (process.env.NODE_ENV === 'production' && PAGE) || (PAGE = fs.readFileSync(path.join(DIR, 'page.html'), 'utf8'));
-  const SLUGS = ['ukradnete-reklamy', 'plny-diar', 'ai-asistentka', 'objednava-sama', 'vyprodane-vanoce', 'sluzby-na-klic', 'dekujeme'];
+  const SLUGS = ['ukradnete-reklamy', 'plny-diar', 'ai-asistentka', 'objednava-sama', 'vyprodane-vanoce', 'sluzby-na-klic', 'ai-agenti', 'dekujeme'];
   function serve(req, res, p, cfg) {
     const slug = p.replace(/^\//, '');
     if (slug && !SLUGS.includes(slug)) return false;
