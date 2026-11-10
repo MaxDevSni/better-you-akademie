@@ -1,4 +1,4 @@
-// Better You Akademie – samostatný web (Node bez frameworku).
+// Fully Akademie – samostatný web (Node bez frameworku).
 // Proměnné prostředí: viz README.md
 'use strict';
 const http = require('http');
@@ -10,7 +10,7 @@ const STORE = require('./lib/store');
 
 const PORT = Number(process.env.PORT) || 3000;
 const SALON_EMAIL = process.env.NOTIFY_EMAIL || 'info@better-you.cz';
-const MAIL_FROM = process.env.MAIL_FROM || `Better You Akademie <${SALON_EMAIL}>`;
+const MAIL_FROM = process.env.MAIL_FROM || `Fully Akademie <${SALON_EMAIL}>`;
 const PUBLIC = () => String(process.env.PUBLIC_URL || '').trim().replace(/\/+$/, '');
 const origin = (req) => PUBLIC() || `${req.headers['x-forwarded-proto'] || 'http'}://${req.headers.host}`;
 const escH = (v) => String(v ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -65,7 +65,7 @@ function mailHtml(o) {
 <div style="display:none;max-height:0;overflow:hidden;opacity:0">${escH(o.pre || '')}</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${cream}"><tr><td align="center" style="padding:28px 12px">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:580px">
-<tr><td align="center" style="padding:0 0 18px"><a href="${site}" style="text-decoration:none;color:${ink};font-size:22px;font-weight:bold"><img src="${site}/img/logo-gold.png" width="40" height="40" alt="" style="vertical-align:middle;border:0;border-radius:8px;margin-right:8px">Better <span style="color:${teal}">You</span> <span style="font-size:13px;letter-spacing:2px;color:${muted}">AKADEMIE</span></a></td></tr>
+<tr><td align="center" style="padding:0 0 18px"><a href="${site}" style="text-decoration:none;color:${ink};font-size:22px;font-weight:bold"><img src="${site}/img/fully-ikona.png" width="40" height="40" alt="" style="vertical-align:middle;border:0;border-radius:10px;margin-right:8px">fully<span style="color:${teal}">.cz</span></a></td></tr>
 <tr><td style="background:#ffffff;border-radius:22px;border:1px solid ${line};overflow:hidden">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
 <tr><td align="center" style="background:${teal};border-radius:21px 21px 0 0;padding:30px 28px 26px;color:#ffffff">
@@ -79,7 +79,7 @@ ${o.tips && o.tips.length ? `<tr><td style="padding:6px 32px 20px"><div style="f
 ${o.note ? `<tr><td style="padding:0 32px 26px"><div style="background:#fbf3e6;border-radius:12px;padding:12px 16px;font-size:14px;line-height:1.5;color:#5a4a33">${o.note}</div></td></tr>` : ''}
 </table></td></tr>
 <tr><td align="center" style="padding:20px 16px 4px;font-size:13px;line-height:1.7;color:${muted}">
-  <b style="color:${ink}">Better You Akademie</b> · marketing a AI pro kosmetické salony<br>
+  <b style="color:${ink}">Fully Akademie</b> · digitální identita a marketing pro salony a kliniky<br>
   <a href="mailto:${SALON_EMAIL}" style="color:${teal};text-decoration:none">${SALON_EMAIL}</a> · <a href="${site}" style="color:${teal};text-decoration:none">web</a><br>
   <span style="font-size:12px">BY studios s.r.o., IČO 23367024</span></td></tr>
 </table></td></tr></table></body></html>`;
@@ -164,7 +164,7 @@ async function sendInvoice(inv, to) {
     rows: [['Číslo faktury', escH(inv.number)], ['Částka', escH(total + (inv.paid ? ' · zaplaceno ✓' : ''))], ['Položka', escH(first.name || '')]],
     ctas: [['Stáhnout fakturu (PDF)', invoiceUrl(inv)]],
     note: 'Kdyby bylo potřeba fakturu upravit (například doplnit firmu a IČO), stačí odpovědět na tento e-mail.' });
-  const ok = await mail(to, `Faktura ${inv.number} – Better You Akademie`, `Dobrý den,\n\nv příloze posíláme fakturu ${inv.number} na částku ${total}${inv.paid ? ' (uhrazeno)' : ''}.\nFakturu si můžete stáhnout také zde: ${invoiceUrl(inv)}\n\nDěkujeme,\nBetter You Akademie`, html,
+  const ok = await mail(to, `Faktura ${inv.number} – Fully Akademie`, `Dobrý den,\n\nv příloze posíláme fakturu ${inv.number} na částku ${total}${inv.paid ? ' (uhrazeno)' : ''}.\nFakturu si můžete stáhnout také zde: ${invoiceUrl(inv)}\n\nDěkujeme,\nFully Akademie`, html,
     [{ filename: INV.fileName(inv), content: INV.pdf(inv), type: 'application/pdf' }]);
   if (ok) { inv.sentAt = new Date().toISOString(); inv.sentTo = to; inv.sendError = ''; } else inv.sendError = lastMail.info || 'e-mail se nepodařilo odeslat';
   return ok;
@@ -177,12 +177,12 @@ const ACADEMY = require('./academy')({ db: () => db, save, send, readBody, limit
 // ---------- Obchodní podmínky ----------
 const TERMS = fs.readFileSync(path.join(__dirname, 'academy', 'terms.html'), 'utf8');
 const termsPage = () => `<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Obchodní podmínky | Better You Akademie</title><link rel="icon" href="/img/logo-gold.png"><meta name="robots" content="noindex">
+<title>Obchodní podmínky | Fully.cz</title><link rel="icon" href="/img/fully-ikona.png"><meta name="robots" content="noindex">
 <style>body{margin:0;background:#f7f8fb;color:#121829;font:16px/1.65 -apple-system,'Segoe UI',Helvetica,Arial,sans-serif}.w{max-width:820px;margin:0 auto;padding:28px 18px 60px}
 a{color:#3554d1}h1{font-size:30px;line-height:1.2;margin:18px 0 6px}h2{font-size:20px;margin:28px 0 8px}.top{display:flex;justify-content:space-between;align-items:center}
 .logo{font-weight:800;text-decoration:none;color:#121829}.logo em{color:#3554d1;font-style:normal}.legal{background:#fff;border:1px solid #e4e7ef;border-radius:18px;padding:8px 26px 20px;margin-top:18px}
 .small{font-size:13px}.muted{color:#5d6273}</style></head><body><div class="w"><div class="top"><a class="logo" href="/">Better <em>You</em> Akademie</a><a href="/">Zpět na Akademii</a></div>
-<h1>Obchodní podmínky Better You Akademie</h1><p class="muted">Pravidla nákupu cest, členství a služeb v Better You Akademii. Účinné od ${INV_EFFECTIVE}.</p>
+<h1>Obchodní podmínky Fully Akademie</h1><p class="muted">Pravidla nákupu cest, členství a služeb v Better You Akademii. Účinné od ${INV_EFFECTIVE}.</p>
 <article class="legal">${TERMS}</article></div></body></html>`;
 const INV_EFFECTIVE = '1. 11. 2026';
 
@@ -222,7 +222,7 @@ async function handle(req, res) {
   if (p === '/sitemap.xml') return send(res, 200, `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${ACADEMY.sitemap().map((u) => `<url><loc>${origin(req)}${u === '/' ? '/' : u}</loc></url>`).join('')}</urlset>`, 'application/xml; charset=utf-8');
   if (p === '/obchodni-podminky') return send(res, 200, termsPage(), 'text/html; charset=utf-8');
   if (p.startsWith('/img/') && serveStatic(res, p)) return;
-  if (p === '/favicon.ico' && serveStatic(res, '/img/logo-gold.png')) return;
+  if (p === '/favicon.ico' && serveStatic(res, '/img/fully-ikona.png')) return;
   // Staré adresy /akademie/... z prvních odkazů vedou na nový kořen
   if (p === '/akademie' || p.startsWith('/akademie/')) { res.writeHead(301, { Location: (p.replace(/^\/akademie/, '') || '/') + url.search }); return res.end(); }
   if (ACADEMY.serve(req, res, p)) return;
@@ -249,7 +249,7 @@ async function importOld() {
   if (!db.academy.users && !db.importedAt) { try { if (await importOld()) await STORE.save(db); } catch (e) { console.error(e.message); } }
   await STORE.flush();
   const server = http.createServer((req, res) => handle(req, res).catch((e) => { console.error(e); if (!res.headersSent) send(res, 500, { error: 'Chyba serveru.' }); }));
-  server.listen(PORT, () => console.log(`Better You Akademie běží na portu ${PORT} (úložiště: ${STORE.status.mode})`));
+  server.listen(PORT, () => console.log(`Fully Akademie běží na portu ${PORT} (úložiště: ${STORE.status.mode})`));
   const bye = () => { STORE.flush().finally(() => process.exit(0)); };
   process.on('SIGTERM', bye); process.on('SIGINT', bye);
 })();

@@ -1,4 +1,4 @@
-// Better You Akademie: účty, chráněný obsah, objednávky a platby (Stripe), administrace.
+// Fully Akademie: účty, chráněný obsah, objednávky a platby (Stripe), administrace.
 // Samostatný web Akademie: data v db.academy (úložiště viz lib/store.js).
 'use strict';
 const fs = require('fs');
@@ -19,13 +19,13 @@ const CATALOG = {
   elearn: { name: 'Salon, který se objednává sám', price: 3990, grants: ['elearn'] },
   tables: { name: 'Sada 16 excelových nástrojů', price: 1490, grants: ['tables'] },
   prompts: { name: 'Knihovna 120 promptů pro salony', price: 990, grants: ['prompts'] },
-  member: { name: 'Členství Better You Akademie', price: 2990, grants: ['member'], recurring: true },
+  member: { name: 'Členství Fully Akademie', price: 2990, grants: ['member'], recurring: true },
   call: { name: 'Strategický hovor (30 min online)', price: 990, grants: ['call'], service: true },
   consult: { name: 'Konzultace byznysu (1 hodina online)', price: 1990, grants: ['consult'], service: true },
   mentor: { name: 'Online mentoring (3 měsíce)', price: 20000, grants: ['mentor'], service: true },
   // jen jako doplněk objednávky nebo nabídka po nákupu
   'call-bump': { name: 'Strategický hovor (30 min online) k objednávce', price: 690, grants: ['call'], service: true, bumpOnly: true },
-  'member-first': { name: 'První měsíc členství Better You Akademie', price: 990, grants: ['member'], days: 31, upsellOnly: true },
+  'member-first': { name: 'První měsíc členství Fully Akademie', price: 990, grants: ['member'], days: 31, upsellOnly: true },
   'steal-bump': { name: 'Ukradněte naše reklamy (nabídka k objednávce)', price: 990, grants: ['steal'], bumpOnly: true },
   'steal-up': { name: 'Ukradněte naše reklamy (nabídka k objednávce)', price: 1490, grants: ['steal'], upsellOnly: true },
   'meta-up': { name: 'Reklama, která plní diář (nabídka k objednávce)', price: 1290, grants: ['meta'], upsellOnly: true },
@@ -120,7 +120,7 @@ module.exports = function academy(ctx) {
     for (const it of o.items) grant(u, it.key, CATALOG[it.key] && CATALOG[it.key].days);
     save();
     try {
-      const inv = issueInvoice({ customer: { name: o.company || u.name, email: u.email, ico: o.ico || '' }, items: o.items.map((it) => ({ name: it.name, sub: 'Better You Akademie', qty: 1, price: it.price })), method: 'online', ref: o.ref }, 'Akademie');
+      const inv = issueInvoice({ customer: { name: o.company || u.name, email: u.email, ico: o.ico || '' }, items: o.items.map((it) => ({ name: it.name, sub: 'Fully Akademie', qty: 1, price: it.price })), method: 'online', ref: o.ref }, 'Akademie');
       o.invoiceId = inv.id; save();
       if (INV.settings(db()).autoSend !== false && u.email) sendInvoice(inv).then(save).catch(() => {});
     } catch (e) { console.error('Akademie faktura:', e.message); }
@@ -149,15 +149,15 @@ module.exports = function academy(ctx) {
     if (hasPath && new Date(o.created || Date.now()) < BONUS_END) tips.push('Bonus k objednávce: osobní kontrola (30 min online). Až budete mít první krok hotový, odpovězte na tento e-mail a domluvíme termín.');
     const member = grants.includes('member');
     const first = escH(String(u.name || '').split(/[ ,]/)[0]);
-    const html = mailHtml({ pre: 'Přístup do Akademie je aktivní. Tady je, jak začít.', eyebrow: 'Better You Akademie', title: 'Děkujeme, máte přístup', icon: '✓',
+    const html = mailHtml({ pre: 'Přístup do Akademie je aktivní. Tady je, jak začít.', eyebrow: 'Fully Akademie', title: 'Děkujeme, máte přístup', icon: '✓',
       intro: [`Dobrý den${first ? ', ' + first : ''},`, 'děkujeme za důvěru. Platba proběhla a obsah máte odemčený ve svém účtu. Přihlásíte se e-mailem a heslem, které jste si zvolila při objednávce.'],
       rows: [...o.items.map((i) => [i.name, escH(kc(i.price))]), ['Celkem', escH(kc(o.total)) + ' · zaplaceno ✓'], ['Objednávka', escH('#' + String(o.id).slice(0, 8))],
         ['Přístup', member ? escH('členství, obnovuje se měsíčně, zrušíte kdykoli') : escH('12 měsíců od dnešního dne')]],
       ctas: [['Otevřít Akademii', site + '/?ucet=1'], ['Plán růstu zdarma', site + '/#plan']],
       tipsTitle: 'Jak začít', tips,
       note: 'Fakturu vám posíláme samostatným e-mailem. Když se kdekoli zaseknete, odpovězte na tento e-mail nebo zavolejte na <a href="tel:+420737025954" style="color:#2a5ae8">737 025 954</a>. Pomůžeme vám zdarma, dokud to nebude fungovat.' });
-    const text = `Dobrý den,\n\nděkujeme za objednávku: ${o.items.map((i) => i.name).join(', ')} (celkem ${kc(o.total)}).\nObsah najdete po přihlášení: ${site}/?ucet=1\n\nJak začít:\n- ${tips.join('\n- ')}\n\nPomoc: odpovězte na tento e-mail nebo volejte 737 025 954.\n\nBetter You Akademie`;
-    return mail(to, (opt.subjectPrefix || '') + 'Děkujeme, váš přístup do Better You Akademie je aktivní', text, html);
+    const text = `Dobrý den,\n\nděkujeme za objednávku: ${o.items.map((i) => i.name).join(', ')} (celkem ${kc(o.total)}).\nObsah najdete po přihlášení: ${site}/?ucet=1\n\nJak začít:\n- ${tips.join('\n- ')}\n\nPomoc: odpovězte na tento e-mail nebo volejte 737 025 954.\n\nFully Akademie`;
+    return mail(to, (opt.subjectPrefix || '') + 'Děkujeme, váš přístup do Fully Akademie je aktivní', text, html);
   }
   const salonMail = (subj, text) => mail(ctx.SALON_EMAIL, subj, text);
 
@@ -261,8 +261,8 @@ module.exports = function academy(ctx) {
       if (x) {
         const t = crypto.randomBytes(20).toString('hex'); a.resets[tkey(t)] = { uid: x.id, exp: Date.now() + 2 * 3600e3 }; save();
         const link = `${PUB(req)}/?obnova=${t}`;
-        mail(x.email, 'Obnova hesla do Better You Akademie', `Dobrý den,\n\nnové heslo si nastavíte na tomto odkazu (platí 2 hodiny):\n${link}\n\nPokud jste o obnovu nežádala, e-mail ignorujte.\n\nBetter You`,
-          mailHtml({ pre: 'Obnova hesla', eyebrow: 'Better You Akademie', title: 'Nastavte si nové heslo', icon: '🔑', intro: ['Dobrý den,', 'nové heslo si nastavíte na odkazu níže. Odkaz platí 2 hodiny.'], ctas: [['Nastavit nové heslo', link]], note: 'Pokud jste o obnovu hesla nežádala, e-mail můžete ignorovat.' })).catch(() => {});
+        mail(x.email, 'Obnova hesla do Fully Akademie', `Dobrý den,\n\nnové heslo si nastavíte na tomto odkazu (platí 2 hodiny):\n${link}\n\nPokud jste o obnovu nežádala, e-mail ignorujte.\n\nBetter You`,
+          mailHtml({ pre: 'Obnova hesla', eyebrow: 'Fully Akademie', title: 'Nastavte si nové heslo', icon: '🔑', intro: ['Dobrý den,', 'nové heslo si nastavíte na odkazu níže. Odkaz platí 2 hodiny.'], ctas: [['Nastavit nové heslo', link]], note: 'Pokud jste o obnovu hesla nežádala, e-mail můžete ignorovat.' })).catch(() => {});
       }
       return send(res, 200, { ok: true });
     }
