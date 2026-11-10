@@ -14,7 +14,8 @@
 <meta property="og:image" content="https://www.better-you.cz/img/ulHero.jpg">
 <meta name="theme-color" content="#121829">
 <link rel="icon" href="/img/logo-gold.png">
-<style>[hidden]{display:none!important}body{margin:0}img{max-width:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}::selection{background:var(--gold-soft);color:var(--ink)}
+<style>[hidden]{display:none!important}body{margin:0}img{max-width:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}.stars{font-size:.6em;letter-spacing:.04em;color:#f2b01e;vertical-align:.12em;white-space:nowrap}
+::selection{background:var(--gold-soft);color:var(--ink)}
 input[type=radio],input[type=checkbox]{accent-color:var(--gold);width:18px;height:18px}
 @media (max-width:560px){.ckbar{padding:12px 14px;gap:8px;font-size:.8rem}.ckbar p{margin:0}}
 </style>
@@ -620,7 +621,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
       <div class="proof">
         <div><b class="tnum">11×</b><small>průměrný ROAS reklam salonu</small></div>
         <div><b class="tnum">1000+</b><small>klientek salonu</small></div>
-        <div><b class="tnum">5,0 ★</b><small>hodnocení na Mapy.com</small></div>
+        <div><b class="tnum">5,0 <span class="stars" role="img" aria-label="5 z 5 hvězdiček">★★★★★</span></b><small>hodnocení na Mapy.com</small></div>
       </div>
     </div>
     <figure class="founder-hero"><span class="fh-glow" aria-hidden="true"></span><img src="/img/akademie-maxmilian.webp" alt="Maxmilián Snítil, zakladatel Better You" width="615" height="737"><figcaption><b>Maxmilián Snítil</b>zdravotník, kosmetik a majitel salonu Better You</figcaption></figure>
@@ -1645,7 +1646,7 @@ function servicesFunnel(){return `<section class="fn-hero"><img class="fn-founde
   <p class="eyebrow">Služby na klíč pro salony a kliniky</p><h1>Chcete výsledky, ne další kurz? <em>Uděláme to za vás.</em></h1>
   <p class="lead">Stejný systém, který v Better You přinesl dlouhodobě jedenáctinásobnou návratnost reklamy, nasadíme ve vašem salonu. Začínáme 30minutovým hovorem nad vašimi čísly.</p>
   <div class="ctas"><a class="btn" href="#${SHASH}" data-go="dotaznik">Zjistit, co se vám vyplatí</a></div>
-  <div class="proof"><div><b>11×</b><small>průměrný ROAS v Better You</small></div><div><b>1000+</b><small>klientek salonu</small></div><div><b>5,0 ★</b><small>na Mapy.com</small></div></div></div></section>
+  <div class="proof"><div><b>11×</b><small>průměrný ROAS v Better You</small></div><div><b>1000+</b><small>klientek salonu</small></div><div><b>5,0 <span class="stars" role="img" aria-label="5 z 5 hvězdiček">★★★★★</span></b><small>na Mapy.com</small></div></div></div></section>
   <section class="fn-sec"><div class="wrap"><p class="eyebrow">Co umíme převzít</p><h2 style="margin-bottom:24px">Služby</h2><div class="menu">${services.filter(s=>s.id!=='devices'&&s.id!=='consult').map(s=>`<div class="item"><div><h3>${s.title}</h3><p>${s.desc}</p>${s.guar?`<div class="svc-extra"><span><span class="g">Záruka:</span> ${s.guar}</span></div>`:''}</div><div class="right"><div class="price">${s.price} <small>${s.unit}</small></div></div></div>`).join('')}</div></div></section>
   <section class="fn-sec alt" id="dotaznik"><div class="wrap fn-order">
    <form class="fn-checkout" id="sq-form"><p class="eyebrow">4 otázky</p>
