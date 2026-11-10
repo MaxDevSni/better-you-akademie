@@ -18,6 +18,73 @@
 ::selection{background:var(--gold-soft);color:var(--ink)}
 input[type=radio],input[type=checkbox]{accent-color:var(--gold);width:18px;height:18px}
 @media (max-width:560px){.ckbar{padding:12px 14px;gap:8px;font-size:.8rem}.ckbar p{margin:0}}
+
+/* ---- služby: nová úvodní stránka ---- */
+.trust{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.84rem;color:rgba(255,255,255,.82)}
+.trust li{display:flex;align-items:center;gap:7px}
+.trust li::before{content:"";width:16px;height:16px;border-radius:50%;background:var(--gold-hi) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.2l2.6 2.6L12 5.4' fill='none' stroke='%23121829' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat;flex:none}
+.svc-pains{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.svc-pains>div{border:1px solid var(--line);border-radius:var(--r);padding:22px;background:var(--card);display:grid;gap:8px;align-content:start}
+.svc-pains b{font-size:1.05rem}
+.svc-pains p{color:var(--muted);font-size:.94rem}
+.proc{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:none}
+.proc li{display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px}
+.proc-n{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--on-ink);font-weight:700;font-size:1.2rem}
+.proc h3{font-size:1.2rem;margin-bottom:6px}
+.proc p{color:var(--muted);max-width:68ch}
+.proc small{display:inline-block;margin-top:10px;font-weight:600;color:var(--gold);font-size:.86rem}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.svc-grid>div{background:var(--card);padding:24px;display:grid;gap:8px;align-content:start}
+.svc-grid>div.hl{background:var(--ink);color:var(--on-ink)}
+.svc-grid>div.hl p{color:color-mix(in srgb,var(--on-ink) 75%,transparent)}
+.svc-grid h3{font-size:1.08rem}
+.svc-grid p{color:var(--muted);font-size:.93rem}
+.cs-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.cs-stats>div{background:var(--ink);color:var(--on-ink);border-radius:var(--r);padding:22px}
+.cs-stats b{display:block;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;letter-spacing:-.02em;color:var(--gold-hi)}
+.cs-stats small{color:color-mix(in srgb,var(--on-ink) 72%,transparent);font-size:.84rem;line-height:1.45;display:block;margin-top:6px}
+.cs-chart{margin:24px 0 0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 22px 14px}
+.cs-chart figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;margin-bottom:18px;font-size:.9rem}
+.cs-chart figcaption span{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.84rem}
+.cs-chart i{display:inline-block;width:12px;height:12px;border-radius:3px}
+.k-s{background:#c3cde3}.k-v{background:var(--gold)}
+.bars{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:8px;align-items:end;height:240px}
+.bar{display:grid;grid-template-rows:1fr auto;height:100%;min-width:0;gap:6px}
+.bar .col{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:3px}
+.bar .s,.bar .v{width:42%;max-width:22px;border-radius:4px 4px 0 0}
+.bar .s{background:#c3cde3}.bar .v{background:var(--gold)}
+.bar small{text-align:center;font-size:.72rem;color:var(--muted)}
+.bar .r{position:absolute;top:-2px;left:0;right:0;text-align:center;font-size:.68rem;font-weight:700;color:var(--fg)}
+.cs-more{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:16px}
+.cs-more>div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:10px;align-content:start}
+.cs-more p:not(.eyebrow){color:var(--muted);font-size:.94rem}
+.cs-more b{color:var(--fg)}
+.cs-more ul{margin:0;padding-left:1.1em;display:grid;gap:5px;color:var(--muted);font-size:.94rem}
+.cs-src{margin-top:16px;max-width:90ch}
+.kpi-g{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;background:var(--ink);color:var(--on-ink);border-radius:20px;padding:clamp(24px,5vw,52px)}
+.kpi-seal{width:160px;height:160px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--gold-hi);font-size:2.6rem;font-weight:800;color:var(--gold-hi)}
+.kpi-g .eyebrow{color:var(--gold-hi)}
+.kpi-g h2{font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:300;margin:12px 0 14px}
+.kpi-g h2 strong{font-weight:700}
+.kpi-g .lead{color:color-mix(in srgb,var(--on-ink) 78%,transparent)}
+.kpi-g .note{color:color-mix(in srgb,var(--on-ink) 65%,transparent);margin-top:16px}
+.kpi-split{display:grid;grid-template-columns:1fr 2fr;gap:12px;margin-top:22px}
+.kpi-split>div{border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:16px;display:grid;gap:6px}
+.kpi-split>div.on{background:rgba(143,173,255,.14);border-color:var(--gold-hi)}
+.kpi-split b{font-size:1.1rem}
+.kpi-split span{font-size:.9rem;color:color-mix(in srgb,var(--on-ink) 75%,transparent)}
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.fit>div{border:1px solid var(--line);border-radius:var(--r);padding:24px;background:var(--card)}
+.fit b{display:block;margin-bottom:10px;font-size:1.05rem}
+.fit .yes b{color:var(--good)} .fit .no b{color:#b5523b}
+.fit ul{margin:0;padding-left:1.1em;display:grid;gap:6px;color:var(--muted)}
+.audit-l{margin:18px 0 0;padding-left:1.1em;display:grid;gap:6px}
+.au-want{border:0;padding:0;margin:0;display:grid;gap:8px}
+.au-want legend{font-weight:600;font-size:.88rem;margin-bottom:6px}
+.f .au-want label{display:grid;grid-template-columns:20px 1fr;align-items:center;gap:10px;font-weight:400;font-size:.92rem}
+.f .au-want input{width:18px;height:18px;margin:0;padding:0}
+@media (max-width:480px){.acct .btn:not(.ghost){display:none}}
+@media (max-width:860px){.kpi-g{grid-template-columns:1fr;gap:20px}.kpi-seal{width:110px;height:110px;font-size:1.9rem}.kpi-split{grid-template-columns:1fr}.fit{grid-template-columns:1fr}.proc li{grid-template-columns:40px 1fr;gap:14px;padding:18px}.proc-n{width:38px;height:38px;font-size:1rem}.bars{height:200px;gap:4px}.bar .r{font-size:.6rem}}
 </style>
 </head>
 <body>
@@ -591,19 +658,18 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:.7em 1.2em;border-radius:999px;font-size:.86rem;z-index:90}
 </style>
 
-<div class="annc">Do Vánoc zbývá <b id="xd">8 týdnů</b>. Poukazy se dají ještě stihnout. <a href="#vyprodane-vanoce">Vánoční sprint za 1 990 Kč</a> · <a href="#plan">Plán na 90 dní zdarma</a></div>
+<div class="annc">Pro salony, kadeřnictví a kliniky: <a href="#audit">SEO audit webu zdarma</a> a hovor nad výsledky bez závazku.</div>
 <header class="top">
   <div class="wrap">
     <a class="logo" href="#top">Better <em>You</em><small>Akademie</small></a>
     <nav class="main" aria-label="Hlavní">
-      <a href="#zdarma">Zdarma</a>
-      <a href="#produkty">Cesty k výsledku</a>
-      <a href="#nastroje">Tabulky</a>
-      <a href="#e-learning">Jak to funguje</a>
-      <a href="#sluzby">Služby</a>
-      <a href="#clenstvi">Členství</a>
+      <a href="#proces">Jak to probíhá</a>
+      <a href="#co-delame">Služby</a>
+      <a href="#pripadovka">Případová studie</a>
+      <a href="#garance">Garance</a>
+      <a href="#produkty">Kurz</a>
     </nav>
-    <div class="acct" id="acct"><button class="btn ghost small" id="login-btn" type="button">Přihlásit</button><a class="btn small" href="#clenstvi">Členství 2 990 Kč</a></div>
+    <div class="acct" id="acct"><button class="btn ghost small" id="login-btn" type="button">Přihlásit</button><a class="btn small" href="#audit">SEO audit zdarma</a></div>
   </div>
 </header>
 
@@ -611,66 +677,192 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow">Pro kosmetičky, masérky a estetické kliniky</p>
-      <h1>Marketing a AI <strong>z reálného salonu</strong>, ne z <em>učebnice</em></h1>
-      <p class="lead">Better You v Hradci Králové jsme postavili od nuly. Všechno, co nám přivedlo přes tisíc klientek, teď sdílím s vámi: Meta kampaně, AI v provozu, sezónní prodej poukazů i web, který rezervuje sám.</p>
+      <p class="eyebrow">Pro kosmetické salony, kadeřnictví a kliniky</p>
+      <h1>Digitální identita, která vám <strong>přivádí klienty</strong>. Z Googlu <em>i z reklamy</em>.</h1>
+      <p class="lead">Strategie, design, web s prodejním funnelem, reklamy na Meta, Google a Seznamu i obsah s tvůrci. Všechno jako jeden proces, ověřený na mém vlastním salonu Better You. A 80 % mé odměny je vázaných na výsledky, na kterých se předem domluvíme.</p>
       <div class="ctas">
-        <a class="btn" href="#plan">Chci plán na 90 dní zdarma</a>
-        <a class="btn ghost" href="#produkty">Vybrat cestu</a>
+        <a class="btn" href="#audit">Chci SEO audit zdarma</a>
+        <a class="btn ghost" href="#pripadovka">Ukázat čísla ze salonu</a>
       </div>
       <div class="proof">
-        <div><b class="tnum">11×</b><small>průměrný ROAS reklam salonu</small></div>
-        <div><b class="tnum">1000+</b><small>klientek salonu</small></div>
+        <div><b class="tnum">9×</b><small>návratnost Meta reklam salonu v roce 2026</small></div>
+        <div><b class="tnum">1 154</b><small>nákupů a rezervací z reklam letos</small></div>
         <div><b class="tnum">5,0 <span class="stars" role="img" aria-label="5 z 5 hvězdiček">★★★★★</span></b><small>hodnocení na Mapy.com</small></div>
       </div>
+      <ul class="trust">
+        <li>80 % odměny vázáno na KPI</li>
+        <li>Ověřeno ve vlastním salonu</li>
+        <li>Od strategie po reklamy</li>
+      </ul>
     </div>
     <figure class="founder-hero"><span class="fh-glow" aria-hidden="true"></span><img src="/img/akademie-maxmilian.webp" alt="Maxmilián Snítil, zakladatel Better You" width="615" height="737"><figcaption><b>Maxmilián Snítil</b>zdravotník, kosmetik a majitel salonu Better You</figcaption></figure>
   </div>
 </section>
 
-<div class="marquee" aria-hidden="true"><div>Zdravotník<i>✦</i>Kosmetik<i>✦</i>Marketér<i>✦</i>Majitel salonu<i>✦</i>Zdravotník<i>✦</i>Kosmetik<i>✦</i>Marketér<i>✦</i>Majitel salonu<i>✦</i>Zdravotník<i>✦</i>Kosmetik<i>✦</i>Marketér<i>✦</i>Majitel salonu<i>✦</i>Zdravotník<i>✦</i>Kosmetik<i>✦</i>Marketér<i>✦</i>Majitel salonu<i>✦</i></div></div>
+<div class="marquee" aria-hidden="true"><div>Strategie<i>✦</i>Design<i>✦</i>Web<i>✦</i>Prodejní funnel<i>✦</i>Meta<i>✦</i>Google Ads<i>✦</i>Sklik<i>✦</i>Content creatoři<i>✦</i>SEO<i>✦</i>Strategie<i>✦</i>Design<i>✦</i>Web<i>✦</i>Prodejní funnel<i>✦</i>Meta<i>✦</i>Google Ads<i>✦</i>Sklik<i>✦</i>Content creatoři<i>✦</i>SEO<i>✦</i></div></div>
 
 <section class="chap">
   <div class="wrap">
     <div class="chap-head">
       <p class="eyebrow">Poznáváte se?</p>
-      <div><h2>Umíte skvělou práci. <strong>Diář to ale neví.</strong></h2>
-      <p class="lead">Většina majitelek salonů, se kterými mluvím, neřeší, jak ošetřovat. Řeší všechno ostatní.</p></div>
+      <div><h2>Děláte skvělou práci, <strong>jen o vás online nikdo neví</strong></h2>
+      <p class="lead">Majitelé provozoven, se kterými mluvím, většinou neřeší, jak ošetřovat nebo stříhat. Řeší, proč se to nepromítá do diáře.</p></div>
     </div>
-    <div class="pains">
-      <a class="pain" href="#plny-diar"><span class="pain-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15l6 0"/></svg></span><span class="pain-tx"><b>Úterý a středa zejí prázdnotou</b><span class="pain-p">Pátky jsou plné, ale přes týden čekáte na telefon.</span><span class="pain-fix">Řešení: Reklama, která plní diář<i>→</i></span></span></a>
-      <a class="pain" href="#ukradnete-reklamy"><span class="pain-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h3l5 4V6L7 10H4a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6M19 6a8 8 0 0 1 0 12"/></svg></span><span class="pain-tx"><b>Reklama „nefunguje“</b><span class="pain-p">Zkusila jste podpořit příspěvek, utratila pár tisíc a nevíte, co vám to přineslo.</span><span class="pain-fix">Řešení: Ukradněte naše reklamy<i>→</i></span></span></a>
-      <a class="pain" href="#ai-asistentka"><span class="pain-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span><span class="pain-tx"><b>Večery u telefonu</b><span class="pain-p">Po práci odpovídáte na zprávy, píšete příspěvky a domlouváte termíny.</span><span class="pain-fix">Řešení: AI asistentka<i>→</i></span></span></a>
-      <a class="pain" href="#plan"><span class="pain-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.6-1-1.7-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.3 0-2.4-.5-3-1.5M12 6v2M12 16v2"/></svg></span><span class="pain-tx"><b>Ceny jste nastavila podle konkurence</b><span class="pain-p">A nevíte, kolik vám jedno ošetření po odečtení nákladů skutečně vydělá.</span><span class="pain-fix">Řešení: Plán růstu zdarma<i>→</i></span></span></a>
-      <a class="pain" href="#vyprodane-vanoce"><span class="pain-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="5" rx="1"/><path d="M5 13v8h14v-8M12 8v13M12 8S10.5 3 8 4s-.5 4 4 4zM12 8s1.5-5 4-4 .5 4-4 4z"/></svg></span><span class="pain-tx"><b>Poukazy prodáváte náhodou</b><span class="pain-p">Vánoce přijdou každý rok překvapivě a slevy berou marži.</span><span class="pain-fix">Řešení: Vánoční sprint<i>→</i></span></span></a>
-      <a class="pain" href="#objednava-sama"><span class="pain-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span><span class="pain-tx"><b>Všechno stojí na vás</b><span class="pain-p">Bez vás salon nejede, a proto nemůžete ani na dovolenou.</span><span class="pain-fix">Řešení: Salon, který se objednává sám<i>→</i></span></span></a>
+    <div class="svc-pains">
+      <div><b>Klienti chodí hlavně na doporučení</b><p>Když se doporučení zastaví, zastaví se i diář. Na Googlu vás přitom hledají každý den.</p></div>
+      <div><b>Reklama „nefunguje“</b><p>Utratili jste pár tisíc za podpořené příspěvky a nevíte, kolik rezervací vám to přineslo.</p></div>
+      <div><b>Web je vizitka, ne obchodník</b><p>Hezky vypadá, ale chybí ceník, online rezervace a měření. Návštěvník odejde a už se nevrátí.</p></div>
+      <div><b>Agentura chce peníze, výsledky neukazuje</b><p>Měsíční faktura chodí pravidelně. Report s cenou za nového klienta už ne.</p></div>
     </div>
-    <p class="pains-note">Ťukněte na to, co vás trápí, a ukážeme vám cestu, která to řeší.</p>
+  </div>
+</section>
+
+<section class="chap alt" id="proces">
+  <div class="wrap">
+    <div class="chap-head">
+      <p class="eyebrow">Jak spolupráce probíhá</p>
+      <div><h2>Nejdřív strategie. <strong>Pak teprve reklama.</strong></h2>
+      <p class="lead">Nekupujete si jednotlivé služby. Projdeme spolu proces, ve kterém každý krok staví na tom předchozím a končí hotovým výstupem.</p></div>
+    </div>
+    <ol class="proc">
+      <li><span class="proc-n">1</span><div><h3>Audit a strategie</h3><p>SEO audit webu, rozbor konkurence ve vašem okolí, ceník a cílová klientela. Domluvíme si konkrétní KPI, třeba počet rezervací nebo cenu za nového klienta.</p><small>Výstup: strategie a cíle, pod které se oba podepíšeme</small></div></li>
+      <li><span class="proc-n">2</span><div><h3>Digitální identita a design</h3><p>Vizuální styl, tón komunikace a fotky s videi, které natočíme s tvůrci obsahu. Aby vás klient poznal na Instagramu, na webu i v reklamě.</p><small>Výstup: vizuální manuál a první sada kreativ</small></div></li>
+      <li><span class="proc-n">3</span><div><h3>Web a prodejní funnel</h3><p>Rychlý web s ceníkem, online rezervací, prodejem dárkových poukazů a měřením konverzí. Každá stránka má jeden úkol: dovést návštěvníka k rezervaci.</p><small>Výstup: funnel, který mění návštěvu na rezervaci</small></div></li>
+      <li><span class="proc-n">4</span><div><h3>Reklamy a organika</h3><p>Meta, Google Ads a Sklik spolu se SEO, profilem na Googlu a Mapy.com. Placená reklama přivede klienty hned, organika vám je nosí dlouhodobě.</p><small>Výstup: kampaně běží a měří cenu za rezervaci</small></div></li>
+      <li><span class="proc-n">5</span><div><h3>Měření a optimalizace</h3><p>Každý týden ladíme kampaně, každý měsíc dostanete report s čísly proti domluveným KPI. Co nefunguje, vypneme. Co funguje, posílíme.</p><small>Výstup: přesně víte, kolik vás stojí nový klient</small></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="chap" id="co-delame">
+  <div class="wrap">
+    <div class="chap-head">
+      <p class="eyebrow">Co pro vás zajistíme</p>
+      <div><h2>Kompletní <strong>digitální identita</strong> pod jednou střechou</h2>
+      <p class="lead">Jeden partner, jedna strategie a jeden report. Žádné přehazování odpovědnosti mezi grafikem, programátorem a „reklamákem“.</p></div>
+    </div>
+    <div class="svc-grid">
+      <div><h3>Meta reklamy</h3><p>Kampaně na Facebooku a Instagramu s cílem Prodej, měření přes Pixel i Conversions API. Přesně tak, jak je vedeme pro Better You.</p></div>
+      <div><h3>Content creatoři</h3><p>Krátká videa a fotky s tvůrci obsahu pro reklamy i sociální sítě. Skutečné prostředí, skuteční lidé, žádné fotobanky.</p></div>
+      <div><h3>Google Ads</h3><p>Reklama ve vyhledávání pro lidi, kteří právě teď hledají vaše ošetření nebo službu ve vašem městě.</p></div>
+      <div><h3>Sklik</h3><p>Vyhledávání a obsahová síť Seznamu. Pro část klientů je Seznam pořád první místo, kde hledají.</p></div>
+      <div><h3>Web na míru</h3><p>Rychlý web s ceníkem, online rezervací, prodejem poukazů a blogem. Napojený na měření od prvního dne.</p></div>
+      <div class="hl"><h3>Prodejní funnel</h3><p>Vstupní stránky pro jednotlivá ošetření a sezónní nabídky, které vedou návštěvníka krok za krokem k rezervaci nebo nákupu poukazu.</p></div>
+      <div><h3>SEO a Mapy</h3><p>Stránky pro to, co lidé ve vašem okolí hledají, profil na Googlu a Mapy.com, recenze. Klienti zdarma, měsíc co měsíc.</p></div>
+      <div><h3>Strategie a design</h3><p>Positioning, ceník, vizuální identita a plán obsahu. Základ, bez kterého je každá reklama jen drahý pokus.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="chap alt" id="pripadovka">
+  <div class="wrap">
+    <div class="chap-head">
+      <p class="eyebrow">Případová studie</p>
+      <div><h2>Better You, Hradec Králové: <strong>čísla přímo z účtů</strong></h2>
+      <p class="lead">Všechno, co vám nabízím, jsem nejdřív za vlastní peníze vyzkoušel ve svém salonu. Tady jsou výsledky ze Správce reklam Meta, Google Ads a Search Console.</p></div>
+    </div>
+    <div class="cs-stats">
+      <div><b class="tnum">410 797 Kč</b><small>investováno do Meta reklam<br>1. 1. – 9. 11. 2026</small></div>
+      <div><b class="tnum">3,71 mil. Kč</b><small>hodnota nákupů a rezervací<br>z těchto reklam</small></div>
+      <div><b class="tnum">9,0×</b><small>návratnost investice do reklamy (ROAS)</small></div>
+      <div><b class="tnum">356 Kč</b><small>průměrná cena za nákup<br>nebo rezervaci</small></div>
+    </div>
+    <figure class="cs-chart">
+      <figcaption><b>Meta reklamy po měsících, 2026</b><span><i class="k-s"></i>útrata <i class="k-v"></i>hodnota nákupů a rezervací</span></figcaption>
+      <div class="bars" id="cs-bars"></div>
+    </figure>
+    <div class="cs-more">
+      <div><p class="eyebrow">Google Ads · od 18. 5. 2026</p><p><b>318 prokliků</b> za 3 873 Kč, míra prokliku <b>10,9 %</b> a <b>20 konverzí</b> po 194 Kč. Malý rozpočet, cílený jen na hledání ošetření v Hradci.</p></div>
+      <div><p class="eyebrow">Organicky z Googlu · 16 měsíců</p><p><b>3 230 prokliků</b> z 22 200 zobrazení ve vyhledávání, míra prokliku <b>14,5 %</b> a průměrná pozice <b>8,4</b>. Klienti, za které neplatíme ani korunu.</p></div>
+      <div><p class="eyebrow">Co jsme udělali</p><ul><li>Web s online rezervací a prodejem poukazů</li><li>Vstupní stránky pro jednotlivá ošetření a 16 stránek pro dárkové poukazy</li><li>Meta kampaně s cílem Prodej, měření Pixel i Conversions API</li><li>Google Ads ve vyhledávání a SEO obsah</li></ul></div>
+    </div>
+    <p class="note cs-src">Zdroj: Správce reklam Meta (atribuce Meta, nákupy a rezervace na webu), Google Ads a Google Search Console, staženo 10. 11. 2026. Výsledky jiných provozoven se liší podle lokality, ceníku a nabídky, proto začínáme auditem a domluvenými cíli.</p>
+  </div>
+</section>
+
+<section class="chap" id="garance">
+  <div class="wrap">
+    <div class="kpi-g">
+      <div class="kpi-seal tnum">80 %</div>
+      <div>
+        <p class="eyebrow">Garance výsledku</p>
+        <h2>80 % mé odměny je vázaných <strong>na splněné KPI</strong></h2>
+        <p class="lead">Nevracím peníze za nespokojenost. Dělám něco lepšího: nesu riziko s vámi. Na začátku si společně stanovíme cíle a odměnu rozdělíme na dvě části.</p>
+        <div class="kpi-split">
+          <div><b>20 % fixně</b><span>Pokrývá základní práci, kterou odvedu každý měsíc: správu kampaní, obsah a reporty.</span></div>
+          <div class="on"><b>80 % za výsledky</b><span>Platíte jen tehdy, když splníme předem dané KPI. Například počet rezervací, cenu za nového klienta, návratnost reklamy nebo pozice na Googlu.</span></div>
+        </div>
+        <p class="note">Cíle stanovíme realisticky podle auditu a vašich čísel, ne podle přání. Proto je můžu garantovat.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="chap alt">
   <div class="wrap">
     <div class="story">
-      <div class="story-side"><p class="eyebrow">Kdo vás učí</p><div class="story-photo"><img src="/img/akademie-maxmilian.webp" alt="Maxmilián Snítil" loading="lazy" width="615" height="737"></div></div>
+      <div class="story-side"><p class="eyebrow">Kdo za tím stojí</p><div class="story-photo"><img src="/img/akademie-maxmilian.webp" alt="Maxmilián Snítil" loading="lazy" width="615" height="737"></div></div>
       <div class="txt">
-        <p class="quote" style="margin:0">„Znám obě strany lehátka. Vím, co klientka cítí, když přijde poprvé, a vím, kolik stojí, aby vůbec přišla.“</p>
-        <p>Začínal jsem jako zdravotník a kosmetik. Proto vím, že ženy do salonu nechodí pro přístroj. Chodí pro jistotu, že jsou v dobrých rukou, a pro pocit, se kterým pak odcházejí.</p>
-        <p>Better You v Hradci Králové jsem postavil od nuly. Tým kosmetiček a zdravotních sester, přes tisíc klientek, hodnocení 5,0 a dlouhodobě jedenáctinásobná návratnost reklamy. Nic z toho nepřišlo samo. Každý krok jsme museli spočítat, vyzkoušet a často i zahodit.</p>
-        <p>Zkušenosti z reklamy, business modelingu a analýzy jsem získal při studiu na prestižní vysoké škole Unicorn University. Tam jsem pochopil, že salon je systém. A systém se dá popsat, změřit a předat. Přesně to dělám v Akademii: dávám vám postupy, tabulky a šablony, které u nás fungují.</p>
+        <p class="quote" style="margin:0">„Znám obě strany. Jako majitel salonu vím, kolik stojí, aby klient vůbec přišel. A jako marketér vím, jak to změřit.“</p>
+        <p>Začínal jsem jako zdravotník a kosmetik. Better You v Hradci Králové jsem postavil od nuly: tým kosmetiček a zdravotních sester, přes tisíc klientek a hodnocení 5,0.</p>
+        <p>Reklamy, web i SEO salonu jsme platili z vlastních peněz, a tak jsme každý krok museli spočítat, vyzkoušet a často i zahodit. Zkušenosti z reklamy, business modelingu a analýzy jsem prohloubil při studiu na Unicorn University.</p>
+        <p>Teď stejný systém stavím pro další provozovny. Proto vám můžu ukázat čísla z vlastního účtu, ne jen pěkné reference.</p>
         <p style="font-weight:600">Maxmilián Snítil, majitel Better You</p>
       </div>
-    </div>
-    <div class="beliefs">
-      <div><s>Víc příspěvků</s><b>Lepší čísla</b></div>
-      <div><s>Motivace a nadšení</s><b>Systém, který běží i bez vás</b></div>
-      <div><s>Teorie z kurzů</s><b>Postupy z reálného salonu</b></div>
     </div>
   </div>
 </section>
 
+<section class="chap">
+  <div class="wrap">
+    <div class="chap-head">
+      <p class="eyebrow">Pro koho to je</p>
+      <div><h2>Spolupráce dává smysl, <strong>když…</strong></h2></div>
+    </div>
+    <div class="fit">
+      <div class="yes"><b>Pro vás, když</b><ul><li>Vlastníte kosmetický salon, kadeřnictví nebo kliniku</li><li>Chcete nové klienty z Googlu i z placené reklamy</li><li>Máte rozpočet na reklamu a chcete vědět, co vám vrací</li><li>Jste připraveni nové klienty obsloužit</li><li>Chcete dlouhodobý proces, ne jednorázovou akci</li></ul></div>
+      <div class="no"><b>Není pro vás, když</b><ul><li>Hledáte jeden zázračný příspěvek</li><li>Nechcete nic měřit ani řešit čísla</li><li>Máte diář plný na měsíce dopředu a nechcete růst</li><li>Chcete v reklamě slibovat léčebné účinky</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="chap alt" id="audit">
+  <div class="wrap contact">
+    <div>
+      <p class="eyebrow">Zdarma a bez závazku</p>
+      <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:300;margin-top:12px">SEO audit vašeho webu <strong>zdarma</strong></h2>
+      <p class="lead" style="margin-top:14px">Vyplňte krátký dotazník. Projdeme váš web, profil na Googlu a konkurenci ve vašem okolí a na hovoru zdarma vám ukážeme, kde ztrácíte klienty.</p>
+      <ul class="audit-l">
+        <li>Jak jste na tom ve vyhledávání proti konkurenci</li>
+        <li>Technické chyby, které brzdí váš web</li>
+        <li>Co lidé ve vašem městě hledají a vy na to nemáte stránku</li>
+        <li>3 kroky, které můžete udělat hned, i bez nás</li>
+      </ul>
+      <p style="margin-top:24px;font-weight:600">info@better-you.cz<br>+420 737 025 954</p>
+    </div>
+    <form class="f" id="audit-form">
+      <label for="au-n">Jméno<input id="au-n" required autocomplete="name"></label>
+      <label for="au-b">Provozovna a město<input id="au-b" required placeholder="Salon Lotos, Pardubice"></label>
+      <label for="au-w">Web nebo Instagram<input id="au-w" required placeholder="www.salonlotos.cz"></label>
+      <label for="au-e">E-mail<input id="au-e" type="email" required autocomplete="email"></label>
+      <label for="au-t">Telefon<input id="au-t" type="tel" autocomplete="tel" placeholder="+420"></label>
+      <label for="au-k">Typ provozovny<select id="au-k"><option>Kosmetický salon</option><option>Kadeřnictví</option><option>Klinika</option><option>Jiné</option></select></label>
+      <fieldset class="au-want"><legend>Co chcete řešit</legend>
+        <label><input type="checkbox" value="Klienti z reklamy"> Klienti z reklamy</label>
+        <label><input type="checkbox" value="Lepší pozice na Googlu"> Lepší pozice na Googlu</label>
+        <label><input type="checkbox" value="Nový web nebo funnel"> Nový web nebo funnel</label>
+        <label><input type="checkbox" value="Kompletní digitální identita"> Kompletní digitální identita</label>
+      </fieldset>
+      <label for="au-r">Měsíční rozpočet na reklamu<select id="au-r"><option>Zatím žádný</option><option>Do 5 000 Kč</option><option>5 000 – 15 000 Kč</option><option>15 000 – 40 000 Kč</option><option>Víc než 40 000 Kč</option></select></label>
+      <label class="consent" for="au-g"><input type="checkbox" id="au-g" required><span>Souhlasím se zpracováním údajů za účelem vyřízení auditu podle <a href="https://www.better-you.cz/ochrana-osobnich-udaju" target="_blank" rel="noopener">zásad ochrany osobních údajů</a>.</span></label>
+      <button class="btn" type="submit">Chci SEO audit zdarma</button>
+      <div id="audit-ok" hidden class="okmsg" role="status"></div>
+    </form>
+  </div>
+</section>
+
 <!-- PLAN -->
-<section class="chap" id="plan">
+<section class="chap" id="plan" hidden>
   <div class="wrap">
     <div class="chap-head">
       <p class="eyebrow">Zdarma</p>
@@ -772,10 +964,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
 <section class="chap" id="produkty">
   <div class="wrap">
     <div class="chap-head">
-      <p class="eyebrow">Cesty k výsledku</p>
+      <p class="eyebrow">Chcete to zkusit sami?</p>
       <div>
-        <h2>Nekupujete kurz. <strong>Kupujete výsledek</strong></h2>
-        <p class="lead">Každá cesta začíná problémem, který jsme v Better You museli vyřešit, a končí tím, že to u vás běží. Postupujete krok za krokem, každý krok má kontrolní bod a hotový výstup.</p>
+        <h2>Kurz <strong>Ukradněte naše reklamy</strong></h2>
+        <p class="lead">Na spolupráci ještě nejste připravení? Vezměte si reklamy, které salonu Better You přinesly nákupy, a šablony pro vaše vlastní kampaně.</p>
       </div>
     </div>
     <div class="offers" id="shelf"></div>
@@ -801,7 +993,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
 </section>
 
 <!-- E-LEARNING -->
-<section class="chap alt" id="e-learning">
+<section class="chap alt" id="e-learning" hidden>
   <div class="wrap">
     <div class="chap-head">
       <p class="eyebrow">Jak cesta funguje</p>
@@ -823,7 +1015,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
 </section>
 
 <!-- SERVICES -->
-<section class="chap" id="sluzby">
+<section class="chap" id="sluzby" hidden>
   <div class="wrap">
     <div class="chap-head">
       <p class="eyebrow">Služby</p>
@@ -835,10 +1027,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
     </div>
     <div class="menu" id="menu"></div>
     <div class="case">
-      <div class="n tnum">11×</div>
+      <div class="n tnum">9×</div>
       <div>
         <p class="eyebrow" style="color:var(--gold-hi)">Případová studie Better You</p>
-        <p style="margin-top:8px">Stejný systém, který spravujeme pro vás, používáme ve vlastním salonu. Dlouhodobý průměrný ROAS výkonnostního marketingu je u nás 11×. Výsledky jiných salonů se liší podle lokality, ceníku a nabídky, proto začínáme vždy konzultací a čísly.</p>
+        <p style="margin-top:8px">Stejný systém, který spravujeme pro vás, používáme ve vlastním salonu. Návratnost Meta reklam je u nás v roce 2026 9×. Výsledky jiných salonů se liší podle lokality, ceníku a nabídky, proto začínáme vždy konzultací a čísly.</p>
       </div>
     </div>
   </div>
@@ -871,7 +1063,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
 </section>
 
 <!-- FREE CALL -->
-<section class="chap" id="hovor">
+<section class="chap" id="hovor" hidden>
   <div class="wrap callbox">
     <div>
       <p class="eyebrow">Strategický hovor za 990 Kč</p>
@@ -902,18 +1094,34 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
     <div class="chap-head">
       <p class="eyebrow">Časté otázky</p>
       <div class="faq">
-        <details><summary>Je to pro mě, když jsem kosmetička na volné noze?</summary><p>Ano. Většina postupů je dělaná pro malý salon s jedním až pěti lidmi a rozpočtem na reklamu od několika tisíc měsíčně. Estetickým klinikám navíc pomůžeme s pravidly reklamy pro zdravotní a estetická ošetření.</p></details>
-        <details><summary>Musím umět s technikou?</summary><p>Ne. Cesta vede každý krok s přesnou cestou v aplikaci. Když se zaseknete, zeptáte se na Q&amp;A v členství nebo si objednáte konzultaci.</p></details>
-        <details><summary>Co když se na cestě zaseknu?</summary><p>Každý krok má kontrolní bod. Když ho nesplníte, napíšete nám nebo přijdete na měsíční Q&amp;A v členství. Přístup k cestě máte 12 měsíců a aktualizace zdarma.</p></details>
-        <details><summary>Můžu členství zrušit?</summary><p>Kdykoli, platí vždy do konce zaplaceného měsíce. Přístup k obsahu končí se členstvím, cesty koupené samostatně vám zůstávají.</p></details>
+        <details><summary>Jak přesně funguje vázání 80 % odměny na KPI?</summary><p>Po auditu si písemně domluvíme cíle na dané období, například počet rezervací z reklamy, cenu za nového klienta nebo návratnost reklamy. Fixně platíte 20 % odměny. Zbylých 80 % platíte jen za období, ve kterém cíle splníme.</p></details>
+        <details><summary>Kdo platí rozpočet na reklamu?</summary><p>Rozpočet na reklamu se platí zvlášť přímo reklamním systémům (Meta, Google, Seznam). O jeho výši rozhodujete vy, my doporučíme, kolik dává smysl.</p></details>
+        <details><summary>Je SEO audit opravdu zdarma?</summary><p>Ano. Projdeme váš web, profil na Googlu a konkurenci a výsledek vám ukážeme na hovoru. Nic tím nepodepisujete.</p></details>
+        <details><summary>Musím mít nový web?</summary><p>Ne. Když váš web funguje, napojíme na něj měření a vstupní stránky. Nový web doporučíme jen tehdy, když ten současný brzdí výsledky.</p></details>
+        <details><summary>Kdy uvidím výsledky?</summary><p>U placené reklamy vidíme první data o rezervacích během prvních týdnů. SEO je běh na delší trať, výsledky rostou v řádu měsíců. Proto kombinujeme obojí.</p></details>
+        <details><summary>Pracujete jen s kosmetickými salony?</summary><p>Zaměřujeme se na kosmetické salony, kadeřnictví a kliniky. Tam víme, co klienti hledají, co zakazují pravidla reklam a jak se rozhodují.</p></details>
         <details><summary>Fakturujete?</summary><p>Ano, fakturu vystavuje BY studios s.r.o., IČO 23367024. Nejsme plátci DPH, cena je tedy konečná.</p></details>
       </div>
     </div>
   </div>
 </section>
 
+<section class="chap alt" id="rozhodnuti">
+  <div class="wrap">
+    <div class="chap-head">
+      <p class="eyebrow">Rozhodnutí</p>
+      <div><h2>Za rok můžete být <strong>na stejném místě</strong>. Nebo ne.</h2></div>
+    </div>
+    <div class="fit">
+      <div class="no"><b>Když nic nezměníte</b><ul><li>Diář dál závisí na doporučeních</li><li>Konkurence, která investuje do Googlu a reklamy, vám bere klienty</li><li>Za reklamu platíte, ale nevíte, co vrací</li></ul></div>
+      <div class="yes"><b>Když začneme auditem</b><ul><li>Víte, kde přesně ztrácíte klienty</li><li>Máte strategii a cíle, pod které se podepíšu</li><li>Platíte hlavně za výsledky, ne za slib</li></ul></div>
+    </div>
+    <p style="margin-top:28px"><a class="btn" href="#audit">Chci SEO audit zdarma</a></p>
+  </div>
+</section>
+
 <!-- CONTACT -->
-<section class="chap alt" id="kontakt">
+<section class="chap alt" id="kontakt" hidden>
   <div class="wrap contact">
     <div>
       <p class="eyebrow">Nezávazná poptávka</p>
@@ -941,7 +1149,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
     <p>Salon: <a href="https://www.better-you.cz">better-you.cz</a> · Servis a pronájem přístrojů: <a href="https://www.better-you.cz/servis-pristroju">Pro firmy</a></p>
   </div>
 </footer>
-<div class="stickycta"><a class="btn" href="#plan">Plán růstu na 90 dní zdarma</a></div>
+<div class="stickycta"><a class="btn" href="#audit">SEO audit zdarma</a></div>
 
 
 <div class="sheet auth" id="auth" hidden role="dialog" aria-modal="true" aria-labelledby="au-title">
@@ -1087,7 +1295,7 @@ const products = [
 ];
 const sum=a=>a.reduce((t,[,v])=>t+v,0);
 const shelf = document.getElementById('shelf');
-products.forEach(p=>{
+products.filter(p=>p.id==='steal').forEach(p=>{
   const total=sum(p.stack)+((Date.now()<new Date('2026-11-15T23:59:59+01:00'))?sum(p.bonus):0);
   const el=document.createElement('article');
   el.className='offer'+(p.dark?' dark':'');
@@ -1205,6 +1413,19 @@ document.getElementById('lead-form').addEventListener('submit',async e=>{
   ok.hidden=false;
 });
 
+
+/* ---------- služby: graf a audit ---------- */
+(()=>{const M=[['led',29687,386684],['úno',41800,473503],['bře',49222,755611],['dub',57380,604369],['kvě',68856,442180],['čvn',44507,275775],['čvc',11278,197346],['srp',12179,120740],['zář',42315,246740],['říj',24181,87232]];
+ const mx=Math.max(...M.map(m=>m[2])),el=document.getElementById('cs-bars'),k=n=>Math.round(n/1000).toLocaleString('cs-CZ')+' tis. Kč';
+ if(el)el.innerHTML=M.map(([n,sp,v])=>`<div class="bar" title="${n}: útrata ${k(sp)}, hodnota ${k(v)}"><div class="col"><span class="r">${(v/sp).toFixed(1).replace('.',',')}×</span><span class="s" style="height:${sp/mx*88}%"></span><span class="v" style="height:${v/mx*88}%"></span></div><small>${n}</small></div>`).join('');
+ const f=document.getElementById('audit-form');if(!f)return;
+ f.addEventListener('submit',async e=>{e.preventDefault();const ok=document.getElementById('audit-ok'),v=id=>document.getElementById(id).value,btn=f.querySelector('button[type=submit]');
+  const want=[...f.querySelectorAll('.au-want input:checked')].map(x=>x.value).join(', ')||'neuvedeno';
+  btn.disabled=true;
+  try{await post('/api/akademie/lead',{type:'SEO audit',name:v('au-n'),email:v('au-e'),phone:v('au-t'),topic:v('au-k')+' · '+want,message:`Provozovna: ${v('au-b')}\nWeb/Instagram: ${v('au-w')}\nTyp: ${v('au-k')}\nChce řešit: ${want}\nRozpočet na reklamu: ${v('au-r')}`,gdpr:document.getElementById('au-g').checked});
+   ok.textContent='Děkujeme, máme to. Ozveme se do 24 hodin v pracovní dny a domluvíme hovor, na kterém vám audit ukážeme.';f.reset();try{if(window.fbq)fbq('track','Lead',{content_name:'SEO audit'})}catch(x){}}
+  catch(x){ok.textContent=x.message}
+  btn.disabled=false;ok.hidden=false});})();
 /* ---------- free tabs ---------- */
 document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
   document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected',x===t));
@@ -1385,7 +1606,7 @@ const AUTH={
 };
 function renderAcct(){const m=ME;const el=document.getElementById('acct');if(!el)return;
   el.innerHTML=m?`${m.role==='admin'?'<button class="btn ghost small" type="button" data-open-admin>Administrace</button>':''}<button class="btn small" type="button" data-open-account>Můj účet</button>`
-    :'<button class="btn ghost small" id="login-btn" type="button">Přihlásit</button><a class="btn small" href="#clenstvi">Členství 2 990 Kč</a>';
+    :'<button class="btn ghost small" id="login-btn" type="button">Přihlásit</button><a class="btn small" href="#audit">SEO audit zdarma</a>';
   if(typeof renderAccFields==='function')renderAccFields(); if(typeof fillBuyAcc==='function')fillBuyAcc();}
 async function openAccount(){if(!ME)return AUTH.open('login','Přihlaste se do svého účtu');
   let data;try{data=await jfetch('/api/akademie/content')}catch(e){if(e.status===401){ME=null;renderAcct();return AUTH.open('login')}return toast(e.message)}
@@ -1488,7 +1709,7 @@ const FUNNELS={
  'plny-diar':{mist:["Nemáte měření, takže nevíte, co reklama přinesla", "Nevíte, kolik smí stát nová klientka", "Cílíte na celou republiku místo okolí salonu", "Máte jednu kampaň pro nové i vracející se lidi", "Prázdné termíny řešíte slevou"],wait:[["Tržby", "Volný termín v úterý je tržba, která už nevznikne."], ["Čas", "Další měsíc čekání, jestli zazvoní telefon."], ["Marže", "Bez reklamy zbývají slevy a ty učí klientky čekat na akci."]],pid:'meta',kicker:'Meta reklama pro kosmetické salony krok za krokem',
   h:'Za 30 dní vám poběží reklama, u které víte, <em>kolik smí stát jedna nová klientka.</em>',
   sub:'Žádné podpořené příspěvky naslepo. Nastavíte měření, spočítáte hranici zisku, natočíte 3 videa a spustíte kampaň na rezervace. Se snímky z reálného účtu salonu.',
-  proof:[['11×','průměrná návratnost reklamy v Better You'],['15','kroků se snímky obrazovky'],['od 3 000 Kč','měsíčně na reklamu stačí']],
+  proof:[['9×','návratnost Meta reklam Better You v roce 2026'],['15','kroků se snímky obrazovky'],['od 3 000 Kč','měsíčně na reklamu stačí']],
   pains:['Utratila jste za reklamu a nevíte, co vám přinesla','Pixel, datová sada, události… nevíte, kde začít','Agentura chce víc, než si můžete dovolit'],
   ba:[['„Reklama nefunguje“','Víte přesně, kolik vás stojí rezervace'],['Podpořený příspěvek','Kampaň na rezervace s měřením'],['Pocit, že přidat peníze je risk','Pravidla, kdy přidat a kdy vypnout']],
   img:'meta',imgcap:'Takhle vypadá krok „Spuštění kampaně“. Každý krok má snímek přímo ze Správce reklam.',
@@ -1644,9 +1865,9 @@ const SQ={want:[['ads','Reklamy za mě'],['web','Nový web s rezervacemi'],['ai'
  start:[['now','Co nejdřív'],['month','Do měsíce'],['later','Zatím jen zjišťuji']]};
 function servicesFunnel(){return `<section class="fn-hero"><img class="fn-founder" src="${MAXIMG}" alt="Maxmilián Snítil, Better You" width="615" height="737"><div class="wrap fn-heroin">
   <p class="eyebrow">Služby na klíč pro salony a kliniky</p><h1>Chcete výsledky, ne další kurz? <em>Uděláme to za vás.</em></h1>
-  <p class="lead">Stejný systém, který v Better You přinesl dlouhodobě jedenáctinásobnou návratnost reklamy, nasadíme ve vašem salonu. Začínáme 30minutovým hovorem nad vašimi čísly.</p>
+  <p class="lead">Stejný systém, který v Better You letos přinesl devítinásobnou návratnost Meta reklam, nasadíme ve vašem salonu. Začínáme 30minutovým hovorem nad vašimi čísly.</p>
   <div class="ctas"><a class="btn" href="#${SHASH}" data-go="dotaznik">Zjistit, co se vám vyplatí</a></div>
-  <div class="proof"><div><b>11×</b><small>průměrný ROAS v Better You</small></div><div><b>1000+</b><small>klientek salonu</small></div><div><b>5,0 <span class="stars" role="img" aria-label="5 z 5 hvězdiček">★★★★★</span></b><small>na Mapy.com</small></div></div></div></section>
+  <div class="proof"><div><b>9×</b><small>ROAS Meta reklam Better You 2026</small></div><div><b>1000+</b><small>klientek salonu</small></div><div><b>5,0 <span class="stars" role="img" aria-label="5 z 5 hvězdiček">★★★★★</span></b><small>na Mapy.com</small></div></div></div></section>
   <section class="fn-sec"><div class="wrap"><p class="eyebrow">Co umíme převzít</p><h2 style="margin-bottom:24px">Služby</h2><div class="menu">${services.filter(s=>s.id!=='devices'&&s.id!=='consult').map(s=>`<div class="item"><div><h3>${s.title}</h3><p>${s.desc}</p>${s.guar?`<div class="svc-extra"><span><span class="g">Záruka:</span> ${s.guar}</span></div>`:''}</div><div class="right"><div class="price">${s.price} <small>${s.unit}</small></div></div></div>`).join('')}</div></div></section>
   <section class="fn-sec alt" id="dotaznik"><div class="wrap fn-order">
    <form class="fn-checkout" id="sq-form"><p class="eyebrow">4 otázky</p>
