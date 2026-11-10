@@ -711,6 +711,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
 
 .calc2{display:inline-flex;gap:6px;padding:5px;border-radius:999px;background:var(--bg-2);margin-bottom:18px}
 .c2-tab{border:0;background:transparent;color:var(--fg);font:600 .9rem var(--font);padding:.65em 1.3em;border-radius:999px;cursor:pointer}
+.calc2{flex-wrap:wrap}
 .c2-tab[aria-selected="true"]{background:var(--ink);color:#fff}
 .c2-panel{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:start}
 .c2-in{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;display:grid;gap:18px}
@@ -737,9 +738,16 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
 .c2-say b{color:var(--gold-hi)}
 @media (max-width:900px){.c2-panel{grid-template-columns:1fr}}
 @media (max-width:520px){.c2-kpi{grid-template-columns:1fr 1fr}.c2-kpi>div.hl{grid-column:1/-1}.c2-bars{gap:8px;height:170px}.c2-bar b{font-size:.68rem}}
+
+.cap{display:inline-flex;align-items:center;gap:9px;margin-top:16px;padding:.45em .95em;border-radius:999px;background:rgba(224,36,76,.14);color:#fff;font-size:.88rem;font-weight:500}
+.cap b{color:#fff}
+.cap-dot{width:9px;height:9px;border-radius:50%;background:var(--cta);box-shadow:0 0 0 0 rgba(224,36,76,.6);animation:capPulse 1.8s ease-out infinite}
+@keyframes capPulse{0%{box-shadow:0 0 0 0 rgba(224,36,76,.55)}70%{box-shadow:0 0 0 9px rgba(224,36,76,0)}100%{box-shadow:0 0 0 0 rgba(224,36,76,0)}}
+.cap-l{margin-top:0;background:#fde8ec;color:var(--fg)}
+.cap-hero{margin-top:22px}
 </style>
 
-<div class="annc">Pro salony, kadeřnictví a kliniky: <a href="#audit">SEO audit webu zdarma</a> a hovor nad výsledky bez závazku.</div>
+<div class="annc">Aktuálně máme kapacitu jen pro <b>2 nové klienty</b>. <a href="#audit">SEO audit webu zdarma</a> a hovor nad výsledky bez závazku.</div>
 <header class="top">
   <div class="wrap">
     <a class="logo" href="#top"><img class="logo-img" src="/img/fully-logo-web.svg" alt="Fully.cz" width="144" height="32"></a>
@@ -771,6 +779,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
         <div><b class="tnum">1 154</b><small>nákupů a rezervací z reklam letos</small></div>
         <div><b class="tnum">5,0 <span class="stars" role="img" aria-label="5 z 5 hvězdiček">★★★★★</span></b><small>hodnocení na Mapy.com</small></div>
       </div>
+      <p class="cap cap-hero"><span class="cap-dot" aria-hidden="true"></span>Aktuálně volná kapacita pro <b>2 nové klienty</b></p>
       <ul class="trust">
         <li>80 % odměny vázáno na KPI</li>
         <li>Ověřeno ve vlastním salonu</li>
@@ -828,7 +837,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
       <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg></span><h3>Content creatoři</h3><p>Krátká videa a fotky s tvůrci obsahu pro reklamy i sociální sítě. Skutečné prostředí, skuteční lidé, žádné fotobanky.</p></div>
       <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg></span><h3>Google Ads</h3><p>Reklama ve vyhledávání pro lidi, kteří právě teď hledají vaše ošetření nebo službu ve vašem městě.</p></div>
       <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/><circle cx="18" cy="16" r="3"/><path d="M20.2 18.2L22 20"/></svg></span><h3>Sklik</h3><p>Vyhledávání a obsahová síť Seznamu. Pro část klientů je Seznam pořád první místo, kde hledají.</p></div>
-      <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg></span><h3>Web na míru</h3><p>Rychlý web s ceníkem, online rezervací, prodejem poukazů a blogem. Napojený na měření od prvního dne.</p></div>
+      <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg></span><h3>Web na míru</h3><p>Rychlý web s ceníkem, online rezervací, prodejem poukazů a blogem. Napojený na měření od prvního dne. Při spolupráci na 8 měsíců a déle ho máte zdarma.</p></div>
       <div class="hl"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg></span><h3>Prodejní funnel</h3><p>Vstupní stránky pro jednotlivá ošetření a sezónní nabídky, které vedou návštěvníka krok za krokem k rezervaci nebo nákupu poukazu.</p></div>
       <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><h3>SEO a Mapy</h3><p>Stránky pro to, co lidé ve vašem okolí hledají, profil na Googlu a Mapy.com, recenze. Klienti zdarma, měsíc co měsíc.</p></div>
       <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span><h3>Strategie a design</h3><p>Positioning, ceník, vizuální identita a plán obsahu. Základ, bez kterého je každá reklama jen drahý pokus.</p></div>
@@ -873,12 +882,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
   <div class="wrap">
     <div class="chap-head">
       <p class="eyebrow">Spočítejte si to</p>
-      <div><h2>Kolik vám může přinést <strong>reklama a Google</strong></h2>
+      <div><h2>Kolik vám může přinést <strong>reklama, Google a nový web</strong></h2>
       <p class="lead">Posuňte jezdce podle svého podniku. Výsledek se spočítá hned, bez registrace.</p></div>
     </div>
     <div class="calc2" role="tablist" aria-label="Kalkulačky">
       <button class="c2-tab" role="tab" aria-selected="true" data-c2="ads" type="button">Placená reklama</button>
       <button class="c2-tab" role="tab" aria-selected="false" data-c2="seo" type="button">SEO a Google</button>
+      <button class="c2-tab" role="tab" aria-selected="false" data-c2="web" type="button">Nový web a funnel</button>
     </div>
 
     <div class="c2-panel" id="c2-ads">
@@ -916,6 +926,26 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
         </div>
         <div class="c2-chart" aria-hidden="true"><div class="c2-bars" id="cs-chart"></div></div>
         <p class="c2-say" id="cs-say"></p>
+      </div>
+    </div>
+
+    <div class="c2-panel" id="c2-web" hidden>
+      <div class="c2-in">
+        <label>Kolik lidí měsíčně přijde na váš web<output id="cw-v-o"></output><input type="range" id="cw-v" min="100" max="10000" step="50" value="1200"></label>
+        <label>Kolik z nich se teď objedná<output id="cw-c-o"></output><input type="range" id="cw-c" min="0.5" max="10" step="0.5" value="1.5"></label>
+        <label>Kolik se objedná po novém webu a rezervačním systému<output id="cw-n-o"></output><input type="range" id="cw-n" min="1" max="15" step="0.5" value="4"></label>
+        <label>Kolik u vás klient utratí za jednu návštěvu<output id="cw-a-o"></output><input type="range" id="cw-a" min="300" max="6000" step="100" value="1500"></label>
+        <label>Na jak dlouho chcete spolupracovat<output id="cw-m-o"></output><input type="range" id="cw-m" min="1" max="12" step="1" value="8"></label>
+        <p class="note">Nové UI, rychlý web, ceník a rezervace na pár kliknutí. Míru objednání po úpravě zadáváte jako odhad, skutečnou hodnotu změříme od prvního dne.</p>
+      </div>
+      <div class="c2-out">
+        <div class="c2-kpi">
+          <div><b id="cw-x">–</b><span>rezervací navíc měsíčně</span></div>
+          <div><b id="cw-y">–</b><span>tržby navíc za rok</span></div>
+          <div class="hl" id="cw-p-box"><b id="cw-p">–</b><span id="cw-p-l">cena nového webu</span></div>
+        </div>
+        <div class="c2-chart" aria-hidden="true"><div class="c2-bars" id="cw-chart"></div></div>
+        <p class="c2-say" id="cw-say"></p>
       </div>
     </div>
     <p style="margin-top:22px"><a class="btn" href="#audit">Chci zjistit svá čísla: SEO audit zdarma</a></p>
@@ -973,6 +1003,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
     <div>
       <p class="eyebrow">Zdarma a bez závazku</p>
       <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:300;margin-top:12px">SEO audit vašeho webu <strong>zdarma</strong></h2>
+      <p class="cap"><span class="cap-dot" aria-hidden="true"></span>Aktuální kapacita: <b>2 noví klienti</b></p>
       <p class="lead" style="margin-top:14px">Vyplňte krátký dotazník. Projdeme váš web, profil na Googlu a konkurenci ve vašem okolí a na hovoru zdarma vám ukážeme, kde ztrácíte klienty.</p>
       <ul class="audit-l">
         <li>Jak jste na tom ve vyhledávání proti konkurenci</li>
@@ -1239,7 +1270,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
         <details><summary>Jak přesně funguje vázání 80 % odměny na KPI?</summary><p>Po auditu si písemně domluvíme cíle na dané období, například počet rezervací z reklamy, cenu za nového klienta nebo návratnost reklamy. Fixně platíte 20 % odměny. Zbylých 80 % platíte jen za období, ve kterém cíle splníme.</p></details>
         <details><summary>Kdo platí rozpočet na reklamu?</summary><p>Rozpočet na reklamu se platí zvlášť přímo reklamním systémům (Meta, Google, Seznam). O jeho výši rozhodujete vy, my doporučíme, kolik dává smysl.</p></details>
         <details><summary>Je SEO audit opravdu zdarma?</summary><p>Ano. Projdeme váš web, profil na Googlu a konkurenci a výsledek vám ukážeme na hovoru. Nic tím nepodepisujete.</p></details>
-        <details><summary>Musím mít nový web?</summary><p>Ne. Když váš web funguje, napojíme na něj měření a vstupní stránky. Nový web doporučíme jen tehdy, když ten současný brzdí výsledky.</p></details>
+        <details><summary>Musím mít nový web?</summary><p>Ne. Když váš web funguje, napojíme na něj měření a vstupní stránky. Nový web doporučíme jen tehdy, když ten současný brzdí výsledky. Při spolupráci na 8 měsíců a déle je nový web včetně rezervačního systému zdarma.</p></details>
         <details><summary>Kdy uvidím výsledky?</summary><p>U placené reklamy vidíme první data o rezervacích během prvních týdnů. SEO je běh na delší trať, výsledky rostou v řádu měsíců. Proto kombinujeme obojí.</p></details>
         <details><summary>Pracujete jen s kosmetickými salony?</summary><p>Zaměřujeme se na kosmetické salony, kadeřnictví a kliniky. Tam víme, co klienti hledají, co zakazují pravidla reklam a jak se rozhodují.</p></details>
         <details><summary>Fakturujete?</summary><p>Ano, fakturu vystavuje BY studios s.r.o., IČO 23367024. Nejsme plátci DPH, cena je tedy konečná.</p></details>
@@ -1258,7 +1289,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
       <div class="no"><b>Když nic nezměníte</b><ul><li>Diář dál závisí na doporučeních</li><li>Konkurence, která investuje do Googlu a reklamy, vám bere klienty</li><li>Za reklamu platíte, ale nevíte, co vrací</li></ul></div>
       <div class="yes"><b>Když začneme auditem</b><ul><li>Víte, kde přesně ztrácíte klienty</li><li>Máte strategii a cíle, pod které se podepíšu</li><li>Platíte hlavně za výsledky, ne za slib</li></ul></div>
     </div>
-    <p style="margin-top:28px"><a class="btn" href="#audit">Chci SEO audit zdarma</a></p>
+    <p style="margin-top:28px;display:flex;flex-wrap:wrap;gap:14px;align-items:center"><a class="btn" href="#audit">Chci SEO audit zdarma</a><span class="cap cap-l"><span class="cap-dot" aria-hidden="true"></span>Kapacita: 2 noví klienti</span></p>
   </div>
 </section>
 
@@ -1588,10 +1619,21 @@ document.getElementById('lead-form').addEventListener('submit',async e=>{
   $('cs-n').textContent='+'+num(extra);$('cs-y').textContent=short(extra*a*12)+' Kč';
   bars($('cs-chart'),[[10,'10. místo'],[5,'5. místo'],[3,'3. místo'],[1,'1. místo']].map(([pos,l])=>({v:cl(pos),t:num(cl(pos))+' '+(Math.round(cl(pos))===1?'klient':Math.round(cl(pos))>=2&&Math.round(cl(pos))<=4?'klienti':'klientů'),l,c:pos===p?'cur':(pos<=3?'on':'')})));
   $('cs-say').innerHTML=extra>0?`Když se dostanete ${p?'z '+p+'. místa':'z neviditelnosti'} do <b>top 3</b>, přijde k vám z Googlu zhruba o <b>${num(extra)} klientů víc každý měsíc</b>. To je <b>${kc(extra*a*12)}</b> ročně, a za proklik neplatíte nic.`:`Už jste v top 3. Další krok je 1. místo: tam vidí výsledky víc než čtvrtina hledajících.`}
+
+ function web(){const v=+$('cw-v').value,c=+$('cw-c').value/100,nn=+$('cw-n').value/100,a=+$('cw-a').value,m=+$('cw-m').value;
+  const pct=x=>String(Math.round(x*1000)/10).replace('.',',')+' %';
+  $('cw-v-o').textContent=num(v)+'×';$('cw-c-o').textContent=pct(c);$('cw-n-o').textContent=pct(nn);$('cw-a-o').textContent=kc(a);
+  $('cw-m-o').textContent=m+' '+(m===1?'měsíc':m<=4?'měsíce':'měsíců');
+  const before=v*c,after=v*Math.max(nn,c),extra=after-before;
+  $('cw-x').textContent='+'+num(extra);$('cw-y').textContent=short(extra*a*12)+' Kč';
+  const free=m>=8;$('cw-p').textContent=free?'0 Kč':'dle nabídky';$('cw-p-l').textContent=free?'nový web při spolupráci od 8 měsíců':'web zdarma od 8 měsíců spolupráce';
+  bars($('cw-chart'),[{v:before,t:num(before)+' rez.',l:'Teď měsíčně',c:'cur'},{v:after,t:num(after)+' rez.',l:'Po novém webu',c:'on'}]);
+  $('cw-say').innerHTML=`Ze stejných ${num(v)} návštěvníků budete mít místo <b>${num(before)}</b> rezervací <b>${num(after)}</b> měsíčně. To je <b>${kc(extra*a*12)}</b> ročně navíc, bez korunky navíc za reklamu.`+(free?` A protože spolupracujeme <b>${m} měsíců</b>, máte <b>nový web zdarma</b>.`:` Při spolupráci na <b>8 měsíců a déle</b> je nový web <b>zdarma</b>.`)}
+ ['cw-v','cw-c','cw-n','cw-a','cw-m'].forEach(id=>$(id).addEventListener('input',web));
  ['ca-b','ca-a','ca-v','ca-c'].forEach(id=>$(id).addEventListener('input',ads));
  ['cs-s','cs-a','cs-k','cs-p'].forEach(id=>$(id).addEventListener('input',seo));
- document.querySelectorAll('.c2-tab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.c2-tab').forEach(x=>x.setAttribute('aria-selected',x===t));$('c2-ads').hidden=t.dataset.c2!=='ads';$('c2-seo').hidden=t.dataset.c2!=='seo'}));
- ads();seo();})();
+ document.querySelectorAll('.c2-tab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.c2-tab').forEach(x=>x.setAttribute('aria-selected',x===t));['ads','seo','web'].forEach(k=>$('c2-'+k).hidden=t.dataset.c2!==k)}));
+ ads();seo();web();})();
 /* ---------- free tabs ---------- */
 document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
   document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected',x===t));
